@@ -1,0 +1,10 @@
+Category,Precision,Recall,F1 Score,Hamming Loss,Exact Match Ratio,Support
+Software,0.885,1.0,0.939,0.115,0.885,408
+Data Analytics,0.9328,0.6596,0.7728,0.3189,0.6811,379
+Ris,0.8197,0.7908,0.805,0.3059,0.6941,368
+Modeling And Simulation,0.8029,0.5091,0.6231,0.4382,0.5618,328
+Process,0.6384,0.9395,0.7602,0.3189,0.6811,248
+Ui,0.7541,0.4577,0.5697,0.3015,0.6985,201
+Software Analytics,0.4444,0.0303,0.0567,0.2885,0.7115,132
+Hardware,0.4762,0.3704,0.4167,0.0607,0.9393,27
+Integrative Analysis,0.0625,0.3077,0.1039,0.1497,0.8503,13

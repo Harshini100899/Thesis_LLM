@@ -1,0 +1,689 @@
+joss_id,title,language,predicted_categories,ground_truth,success,error,latency_s,raw_response
+1361,SMACT: Semiconducting Materials by Analogy and Chemical Theory,Python,"['Ris', 'Software', 'Ui', 'Process']","['Data Analytics', 'Hardware', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.63,"```json
+{
+  ""categories"": [
+    ""Ris"",
+    ""Software"",
+    ""Ui"",
+    ""Process""
+  ]
+}
+```"
+4633,GNU Data Language 1.0: a free/libre and open-source drop-in replacement for IDL/PV-WAVE,C++,"['Software', 'Ris']","['Data Analytics', 'Hardware', 'Integrative Analysis', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.67,"```json
+{""categories"": [""Software"", ""Ris""]}
+```"
+7291,COHESIVM: Combinatorial h+/e- Sample Investigation using Voltaic Measurements,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Hardware', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.17,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}
+```"
+7155,Caliscope: GUI Based Multicamera Calibration and Motion Tracking,Python,"['Ui', 'Software', 'Ris']","['Data Analytics', 'Hardware', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.83,"```json
+{""categories"": [""Ui"", ""Software"", ""Ris""]}
+```"
+4045,Octopus Sensing: A Python library for human behavior studies,Python,"['Ris', 'Software', 'Process', 'Data Analytics']","['Data Analytics', 'Hardware', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.25,"```json
+{
+  ""categories"": [
+    ""Ris"",
+    ""Software"",
+    ""Process"",
+    ""Data Analytics""
+  ]
+}
+```"
+6515,"Pybehave: a hardware agnostic, Python-based framework for controlling behavioral neuroscience experiments",Python,"['Hardware', 'Software', 'Ui', 'Ris']","['Data Analytics', 'Hardware', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.7,"{""categories"": [""Hardware"", ""Software"", ""Ui"", ""Ris""]}"
+5854,"PhysioLabXR: A Python Platform for Real-Time, Multi-modal, Brain–Computer Interfaces and Extended Reality Experiments",Python,"['Modeling And Simulation', 'Data Analytics', 'Ui', 'Ris', 'Process']","['Data Analytics', 'Hardware', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.94,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ui"", ""Ris"", ""Process""]}"
+4115,Cabana: A Performance Portable Library for Particle-Based Simulations,C++,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Hardware', 'Ris', 'Software', 'Software Analytics']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+6876,eVAS: A user-friendly electronic Visual Analogue Scale,Python,"['Ui', 'Software', 'Process', 'Hardware']","['Data Analytics', 'Hardware', 'Ris', 'Software', 'Ui']",True,,0.65,"{""categories"": [""Ui"", ""Software"", ""Process"", ""Hardware""]}"
+5182,Lightshow: a Python package for generating computational x-ray absorption spectroscopy input files,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.86,"```json
+{""categories"": [""Ris"", ""Software"", ""Process""]}
+```"
+4741,activAnalyzer: An R Shiny app to analyse ActiGraph accelerometer data and to implement the use of the PROactive Physical Activity in COPD instruments,R,"['Ui', 'Data Analytics', 'Ris']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.74,"{""categories"": [""Ui"", ""Data Analytics"", ""Ris""]}"
+786,iml: An R package for Interpretable Machine Learning,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.66,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+1412,insight: A Unified Interface to Access Information from Model Objects in R,R,"['Software', 'Ris', 'Data Analytics']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.87,"```json
+{""categories"": [""Software"", ""Ris"", ""Data Analytics""]}
+```"
+1247,SkyPortal: An Astronomical Data Platform,Python,"['Data Analytics', 'Ris', 'Software', 'Process', 'Ui']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.39,"```json
+{
+  ""categories"": [
+    ""Data Analytics"",
+    ""Ris"",
+    ""Software"",
+    ""Process"",
+    ""Ui""
+  ]
+}
+```"
+4987,signnet: An R package for analyzing signed networks,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5338,Crowsetta: A Python tool to work with any format for annotating animal vocalizations and bioacoustics data.,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Integrative Analysis', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+4740,overviewR - Easily Explore Your Data in R,R,"['Data Analytics', 'Ui', 'Process', 'Software']","['Data Analytics', 'Integrative Analysis', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.71,"{""categories"": [""Data Analytics"", ""Ui"", ""Process"", ""Software""]}"
+3290,covidregionaldata: Subnational data for COVID-19 epidemiology,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Integrative Analysis', 'Process', 'Ris', 'Software']",True,,0.78,"```json
+{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}
+```"
+177,GSODR: Global Summary Daily Weather Data in R,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Integrative Analysis', 'Process', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+1322,UTDEventData: An R package to access political event data,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Integrative Analysis', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+1169,scikit-posthocs: Pairwise multiple comparison tests in Python,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software Analytics']",True,,0.57,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+8855,Graphem - JAX: Node Influence Maximization via Geometric Embeddings,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.69,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+8504,PyBispectra: A toolbox for advanced electrophysiological signal processing using the bispectrum,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.76,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+8456,Gene Fetch: A Python tool for sequence retrieval from GenBank across the tree of life,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.63,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+8481,Scikit-Longitudinal: A Machine Learning Library for Longitudinal Classification in Python,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.15,"```json
+{
+  ""categories"": [
+    ""Data Analytics"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+8454,SPEI: A Python package for calculating and visualizing drought indices,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.73,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+7471,EcoLogits: Evaluating the Environmental Impacts of Generative AI,Python,"['Ris', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.17,"```json
+{
+  ""categories"": [
+    ""Ris"",
+    ""Data Analytics"",
+    ""Process""
+  ]
+}
+```"
+8061,FRAGMENT-MNP: A model of micro- and nanoplastic fragmentation in the environment,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.95,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}
+```"
+7477,VoteKit: A Python package for computational social choice research,Python,"['Software', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.84,"```json
+{""categories"": [""Software"", ""Data Analytics"", ""Process""]}
+```"
+7668,Mesa 3: Agent-based modeling with Python in 2025,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.44,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Ui"",
+    ""Process""
+  ]
+}
+```"
+7301,Pooltool: A Python package for realistic billiards simulation,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+7059,Jupyter Scatter: Interactive Exploration of Large-Scale Datasets,Python,"['Ui', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.24,"```json
+{
+  ""categories"": [
+    ""Ui"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+6169,proteusPy: A Python Package for Protein Structure and Disulfide Bond Modeling and Analysis,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.14,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Ui"", ""Process""]}
+```"
+6802,chemotools: A Python Package that Integrates Chemometrics and scikit-learn,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.9,"```json
+{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}
+```"
+6830,"sourmash v4: A multitool to quickly search, compare, and analyze genomic and metagenomic data sets",Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.76,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+6298,ABSESpy: An agent-based modeling framework for social-ecological systems,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.34,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+6227,Learning from Crowds with Crowd-Kit,Python,"['Data Analytics', 'Software', 'Process', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ui""]}"
+6016,HyperNetX: A Python package for modeling complex network data as hypergraphs,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.47,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Ui"",
+    ""Process""
+  ]
+}
+```"
+5959,HW2D: A reference implementation of the Hasegawa-Wakatani model for plasma turbulence in fusion reactors,Python,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Ris""]}"
+5673,PurpleCaffeine: tracking of quantum programs and experiments,Python,"['Ris', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Ris"", ""Software"", ""Ui"", ""Process""]}"
+5076,Sciris: Simplifying scientific software in Python,Python,"['Software', 'Process', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.63,"{""categories"": [""Software"", ""Process"", ""Data Analytics""]}"
+5255,Bluebonnet: Scaling solutions for production analysis from unconventional oil and gas wells,Python,"['Ris', 'Data Analytics', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.98,"```json
+{""categories"": [""Ris"", ""Data Analytics"", ""Process"", ""Software""]}
+```"
+5582,PxMCMC: A Python package for proximal Markov Chain Monte Carlo,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.03,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}
+```"
+5593,Pyafscgap.org: Open source multi-modal Python-based tools for NOAA AFSC RACE GAP,Python,"['Data Analytics', 'Software', 'Ui', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.97,"```json
+{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process"", ""Ris""]}
+```"
+5092,Fast Resampling and Monte Carlo Methods in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.83,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+4724,The sspm R package for spatially-explicit surplus production population models,R,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.84,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+5269,spgrep: On-the-fly generator of space-group irreducible representations,Python,"['Modeling And Simulation', 'Software', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.01,"```json
+{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris"", ""Process""]}
+```"
+5415,xclim: xarray-based climate data analytics,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.75,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+5300,fractopo: A Python package for fracture network analysis,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.89,"```json
+{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}
+```"
+5149,PyExperimenter: Easily distribute experiments and track results,Python,"['Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.11,"```json
+{
+  ""categories"": [
+    ""Software"",
+    ""Process"",
+    ""Ris""
+  ]
+}
+```"
+5126,Openseize: A digital signal processing package for large EEG datasets in Python,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+4953,tpcp: Tiny Pipelines for Complex Problems - A set of framework independent helpers for algorithms development and evaluation,Python,"['Software', 'Process', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.86,"```json
+{""categories"": [""Software"", ""Process"", ""Data Analytics""]}
+```"
+5028,ALNS: a Python implementation of the adaptive large neighbourhood search metaheuristic,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4774,VIP: A Python package for high-contrast imaging,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.12,"```json
+{
+  ""categories"": [
+    ""Ris"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+4879,teiphy: A Python Package for Converting TEI XML Collations to NEXUS and Other Formats,Python,"['Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.71,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+4866,hstrat: a Python Package for phylogenetic inference on distributed digital evolution populations,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.12,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}
+```"
+4622,Black-it: A Ready-to-Use and Easy-to-Extend Calibration Kit for Agent-based Models,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.2,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+4455,GPJax: A Gaussian Process Framework in JAX,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.02,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}
+```"
+4212,ausdex: A Python package for adjusting Australian dollars for inflation,Python,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.97,"```json
+{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}
+```"
+4383,`tukey_hsd`: An Accurate Implementation of the Tukey Honestly Significant Difference Test in Python,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.66,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+4080,Rainbow: Automated Air-Liquid Interface Cell Culture Analysis Using Deep Optical Flow,Python,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.26,"```json
+{
+  ""categories"": [
+    ""Data Analytics"",
+    ""Ris"",
+    ""Ui"",
+    ""Process""
+  ]
+}
+```"
+3417,Beiwe: A data collection platform for high-throughput digital phenotyping,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.19,"```json
+{
+  ""categories"": [
+    ""Data Analytics"",
+    ""Software"",
+    ""Ris""
+  ]
+}
+```"
+2784,"kalepy: a Python package for kernel density estimation, sampling and plotting",Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.59,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+2392,multivar_horner: A Python package for computing Horner factorisations of multivariate polynomials,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+2075,psi-collect: A Python module for post-storm image collection and cataloging,Python,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.75,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+1931,NeuroDiffEq: A Python package for solving differential equations with neural networks,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.04,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}
+```"
+1738,Pybotics: Python Toolbox for Robotics,Python,"['Software', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.86,"```json
+{""categories"": [""Software"", ""Ris"", ""Process""]}
+```"
+1675,pySRURGS - a python package for symbolic regression by uniform random global search,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.79,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+1463,emg3d: A multigrid solver for 3D electromagnetic diffusion,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+979,Lithology: A Landlab submodule for spatially variable rock properties,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+613,NiaPy: Python microframework for building nature-inspired algorithms,Python,"['Software', 'Process', 'Modeling And Simulation']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.92,"```json
+{""categories"": [""Software"", ""Process"", ""Modeling And Simulation""]}
+```"
+53,CAZy-parser a way to extract information from the Carbohydrate-Active enZYmes Database,Python,"['Ris', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.63,"{""categories"": [""Ris"", ""Data Analytics"", ""Process""]}"
+8037,AutoUncertainties: A Python Package for Uncertainty Propagation,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+6733,MWRpy: A Python package for processing microwave radiometer data,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.73,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+5867,sparse-lm: Sparse linear regression models in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.92,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+5701,lavaanExtra: Convenience Functions for Package lavaan,R,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.74,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+4607,PyFPT: A Python package for first-passage times,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.79,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+4568,CWInPy: A Python package for inference with continuous gravitational-wave signals from pulsars,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.98,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+3330,spopt: a python package for solving spatial optimization problems in PySAL,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.95,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}
+```"
+4078,PyNumDiff: A Python package for numerical differentiation of noisy time-series data,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+3864,sknet: A Python framework for Machine Learning in Complex Networks,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+3617,eyecite: A tool for parsing legal citations,Python,"['Software', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.8,"```json
+{""categories"": [""Software"", ""Data Analytics"", ""Ris""]}
+```"
+3634,latentcor: An R Package for estimating latent correlations from mixed data types,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.66,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+3323,RENT: A Python Package for Repeated Elastic Net Feature Selection,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.59,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+2607,"Foolbox Native: Fast adversarial attacks to benchmark the robustness of machine learning models in PyTorch, TensorFlow, and JAX",Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+1881,ytree: A Python package for analyzing merger trees,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.69,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+1704,AXITOM: A Python package for reconstruction of axisymmetric tomograms acquired by a conical beam,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+1427,fmcmc: A friendly MCMC framework,R,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+1306,crystal-torture: A crystal tortuosity module,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.59,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+1330,Python Sorted Containers,Python,"['Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.46,"{""categories"": [""Software"", ""Process""]}"
+1143,ArviZ a unified library for exploratory analysis of Bayesian models in Python,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+8816,NAMOSIM: a Robot Motion Planner for Navigation Among Movable Obstacles,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.03,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process""]}
+```"
+7061,Giga Connectome: a BIDS-app for time series and functional connectome extraction,Python,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.86,"```json
+{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}
+```"
+7887,fuzzyclara: Efficient Medoid-based Clustering Algorithms for Large and Fuzzy Data,R,"['Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.7,"{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+7769,popclass: A Python Package for Classifying Microlensing Events,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.91,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+7009,commensurability: a Python package for classifying astronomical orbits based on their toroid volume,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+7363,CycloPhaser: A Python Package for Detecting Extratropical Cyclone Life Cycles,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.08,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}
+```"
+7830,jaxKAN: A unified JAX framework for Kolmogorov-Arnold Networks,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+6274,ETHOS.FINE: A Framework for Integrated Energy System Assessment,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.22,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Process""
+  ]
+}
+```"
+7358,shipgrav: A Python package for marine gravimetry,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.88,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+7031,A tool for qualitative data analysis designed to support computational thinking,Python,"['Data Analytics', 'Software', 'Process', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.93,"```json
+{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ui""]}
+```"
+6756,orbitize! v3: Orbit fitting for the High-contrast Imaging Community,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.92,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+6912,f3dasm: Framework for Data-Driven Design and Analysis of Structures and Materials,Python,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Ris""]}"
+6241,RidePy: A fast and modular framework for simulating ridepooling systems,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+5756,ZOSPy: optical ray tracing in Python through OpticStudio,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+5916,MetObs - a Python toolkit for using non-traditional meteorological observations,Python,"['Data Analytics', 'Ris', 'Software', 'Process', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.83,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process"", ""Ui""]}"
+5201,Mobilkit: A Python Toolkit for Urban Resilience and Disaster Risk Management Analytics,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.66,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+6027,prospect: an R package to link leaf optical properties with their chemical and structural properties with the leaf model PROSPECT,R,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.72,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+5668,matscipy: materials science at the atomic scale with Python,Python,"['Modeling And Simulation', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software"", ""Process""]}"
+6038,MiscMetabar: an R package to facilitate visualization and reproducibility in metabarcoding analysis,R,"['Ris', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.94,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+5358,TauFactor 2: A GPU accelerated python tool for microstructural analysis,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.0,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process"", ""Ris""]}"
+5352,Physics-Informed Neural networks for Advanced modeling,Python,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Software""]}"
+5017,DeBEIR: A Python Package for Dense Bi-Encoder Information Retrieval,Python,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.77,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+4930,elapid: Species distribution modeling tools for Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.83,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+5100,Melodie: Agent-based Modeling in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.37,"```json
+{
+  ""categories"": [
+    ""Modeling And Simulation"",
+    ""Data Analytics"",
+    ""Software"",
+    ""Ui"",
+    ""Process""
+  ]
+}
+```"
+4753,simcardems: A FEniCS-based cardiac electro-mechanics solver,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.97,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+4206,BCEA: An R Package for Cost-Effectiveness Analysis,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.67,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+4398,MyPTV: A Python Package for 3D Particle Tracking,Jupyter Notebook,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.66,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+4017,PySPI: A python analysis framework for INTEGRAL/SPI,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.88,"```json
+{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}
+```"
+3738,PyLithics: A Python package for stone tool analysis,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.74,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+3199,Sapsan: Framework for Supernovae Turbulence Modeling with Machine Learning,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.87,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+3646,spant: An R package for magnetic resonance spectroscopy analysis,R,"['Ris', 'Data Analytics', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.76,"{""categories"": [""Ris"", ""Data Analytics"", ""Ui"", ""Process""]}"
+3695,HydDown: A Python package for calculation of hydrogen (or other gas) pressure vessel filling and discharge,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.88,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+3434,"Sync Toolbox: A Python Package for Efficient, Robust, and Accurate Music Synchronization",Python,"['Software', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.73,"{""categories"": [""Software"", ""Data Analytics"", ""Ris"", ""Process""]}"
+3351,neworder: a dynamic microsimulation framework for Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Ris""]}"
+3221,mosartwmpy: A Python implementation of the MOSART-WM coupled hydrologic routing and water management model,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.85,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+3127,FitBenchmarking: an open source Python package comparing data fitting software,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,1.02,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process"", ""Ris""]}"
+2973,Tyssue: an epithelium simulation library,Python,"['Modeling And Simulation', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.79,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process"", ""Ris""]}"
+3021,seaborn: statistical data visualization,Python,"['Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.71,"{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+3089,IFermi: A python library for Fermi surface generation and analysis,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.94,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+2641,"astrosource: automating optical astronomy measurement, calibration and analysis for variable stellar sources from provided photometry",Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.81,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+2107,SampleDB: A sample and measurement metadata database,Python,"['Software', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.95,"```json
+{""categories"": [""Software"", ""Ris"", ""Ui"", ""Process""]}
+```"
+2804,gospl: Global Scalable Paleo Landscape Evolution,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.94,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+2006,LiberTEM: Software platform for scalable multidimensional data processing in transmission electron microscopy,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.68,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+1896,MNE-BIDS: Organizing electrophysiological data into the BIDS format and facilitating their analysis,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.65,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+1837,CoralP: Flexible visualization of the human phosphatome,R,"['Ui', 'Ris', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.7,"{""categories"": [""Ui"", ""Ris"", ""Data Analytics"", ""Process""]}"
+785,shinyssd v1.0: Species Sensitivity Distributions for Ecotoxicological Risk Assessment,R,"['Ris', 'Ui', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.85,"```json
+{""categories"": [""Ris"", ""Ui"", ""Data Analytics""]}
+```"
+1108,AnyPyTools: A Python package for reproducible research with the AnyBody Modeling System,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.88,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+1026,Pingouin: statistics in Python,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+638,MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.59,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+427,MDEntropy: Information-Theoretic Analyses for Molecular Dynamics,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.72,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+188,MSMExplorer: Data Visualizations for Biomolecular Dynamics,Python,"['Data Analytics', 'Ui', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.65,"{""categories"": [""Data Analytics"", ""Ui"", ""Ris""]}"
+7948,NumbaCS: A fast Python package for coherent structure analysis,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+8121,3DQLayers: Volumetric Layer Based Analysis for Quantitative Renal MRI,Python,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+7300,AutoPDEx: An Automized Partial Differential Equation solver based on JAX,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.79,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+7490,pyMechT: A Python package for mechanics of soft tissues,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.93,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+7313,PeakPerformance - A tool for Bayesian inference-based fitting of LC-MS/MS peaks,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+6919,Osier: A Python package for multi-objective energy system optimization,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.81,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+6427,PhyloX: A Python package for complete phylogenetic network workflows,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.66,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+6934,alchemlyb: the simple alchemistry library,Python,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.7,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+6860,MARTINI: Mock Array Radio Telescope Interferometry of the Neutral ISM,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.74,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+6120,DICaugment: A Python Package for 3D Medical Imaging Augmentation,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+5984,kinisi: Bayesian analysis of mass transport from molecular dynamics simulations,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.83,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+5810,tightbinder: A Python package for semi-empirical tight-binding models of crystalline and disordered solids,Python,"['Modeling And Simulation', 'Software', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris"", ""Process""]}"
+5511,otoole: OSeMOSYS Tools for Energy Work,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.81,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+5422,SuperNOVA: Semi-Parametric Identification and Estimation of Interaction and Effect Modification in Mixed Exposures using Stochastic Interventions in R,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.68,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+5510,xinvert: A Python package for inversion problems in geophysical fluid dynamics,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.81,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+5410,Ethical Smart Grid: a Gym environment for learning ethical behaviours,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+5372,Netgraph: Publication-quality Network Visualisations in Python,Python,"['Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.7,"{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+5093,Multi-view-AE: A Python package for multi-view autoencoder models,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+4868,NIMPHS: Numerous Instruments to Manipulate and Post-process Hydraulic Simulations,Python,"['Modeling And Simulation', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.79,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process"", ""Ris""]}"
+4996,"Water Systems Integrated Modelling framework, WSIMOD: A Python package for integrated modelling of water quality and quantity across the water cycle",Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+4880,abcvoting: A Python package for approval-based multi-winner voting rules,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+3829,HARDy: Handling Arbitrary Recognition of Data in Python,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.59,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+3308,GGMnonreg: Non-Regularized Gaussian Graphical Models in R,R,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+2879,Bempp-cl: A fast Python based just-in-time compiling boundary element library.,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+2825,PyAutoLens: Open-Source Strong Gravitational Lensing,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+2757,The Pulsar Signal Simulator: A Python package for simulating radio signal data from pulsars,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+2675,SLIX: A Python package for fully automated evaluation of Scattered Light Imaging measurements on brain tissue,Python,"['Ris', 'Data Analytics', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Ris"", ""Data Analytics"", ""Process"", ""Software""]}"
+2103,fleck: Fast approximate light curves for starspot rotational modulation,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+1832,SunPy: A Python package for Solar Physics,Python,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.76,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+1511,swisslandstats-geopy: Python tools for the land statistics datasets from the Swiss Federal Statistical Office,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+1414,anesthetic: nested sampling visualisation,Python,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+1191,AxoPy: A Python Library for Implementing Human-Computer Interface Experiments,Python,"['Software', 'Ui', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.69,"{""categories"": [""Software"", ""Ui"", ""Ris"", ""Process""]}"
+855,pfla: A Python Package for Dental Facial Analysis using Computer Vision and Statistical Shape Analysis,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.75,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+512,origami: A Generalized Framework for Cross-Validation in R,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.59,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+2565,rsudp: A Python package for real-time seismic monitoring with Raspberry Shake instruments,Python,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Ui']",True,,0.72,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+989,diff_classifier: Parallelization of multi-particle tracking video analyses,Python,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris', 'Ui']",True,,0.71,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}"
+3896,"PyMPDATA v1: Numba-accelerated implementation of MPDATA with examples in Python, Julia and Matlab",Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+2449,Sit2StandPy: An Open-Source Python Package for Detecting and Quantifying Sit-to-Stand Transitions Using an Accelerometer on the Lower Back,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+1745,ndsplines: A Python Library for Tensor-Product B-Splines of Arbitrary Dimension,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Ris']",True,,0.76,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+7256,PDR: The Planetary Data Reader,Python,"['Ris', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Ris"", ""Data Analytics"", ""Process""]}"
+6877,PyNeuroTrace - Python code for neural activity time series,Python,"['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software', 'Ui']",True,,0.99,"{""categories"": [""Data Analytics"", ""Modeling And Simulation"", ""Ris"", ""Software"", ""Ui"", ""Process""]}"
+6306,GTFS Segments: A Fast and Efficient Library to Generate Bus Stop Spacings,Python,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software', 'Ui']",True,,1.15,"```json
+{
+  ""categories"": [
+    ""Data Analytics"",
+    ""Software"",
+    ""Process"",
+    ""Ris""
+  ]
+}
+```"
+5763,OpenFEPOPS: A Python implementation of the FEPOPS molecular similarity technique,Python,"['Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+8311,"The PHITS Tools Python package for parsing, organizing, and analyzing results from the PHITS radiation transport and DCHAIN activation codes",Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.73,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+6393,"goFlux: A user-friendly way to calculate GHG fluxes yourself, regardless of user experience",R,"['Data Analytics', 'Ris', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.68,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui""]}"
+6011,Stokesian Dynamics in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+4840,Spectral Connectivity: a python package for computing multitaper spectral estimates and frequency-domain brain connectivity measures on the CPU and GPU,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.89,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+4306,OpenPelt: Python Framework for Thermoelectric Temperature Control System Development,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+3786,robustHD: An R package for robust regression with high-dimensional data,R,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+3324,bwsample: Processing Best-Worst Scaling data,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process', 'Software']",True,,0.58,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+7094,plasticparcels: A python package for marine plastic dispersal simulations and parameterisation development using parcels,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Process']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+247,lattice_mc: A Python Lattice-Gas Monte Carlo Module,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software Analytics']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+7971,textAnnotatoR: An Interactive Text Annotation Tool with 'shiny' GUI,R,"['Ui', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.62,"{""categories"": [""Ui"", ""Data Analytics"", ""Process""]}"
+2685,"DE-Sim: an object-oriented, discrete-event simulation tool for data-intensive modeling of complex systems in Python",Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+6586,PulPy: A Python Toolkit for MRI RF and Gradient Pulse Design,Python,"['Modeling And Simulation', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.77,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software"", ""Process""]}"
+3318,radioactivedecay: A Python package for radioactive decay calculations,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+2048,FASMA 2.0: A Python package for stellar parameters and chemical abundances,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.88,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+2079,scPCA: A toolbox for sparse contrastive principal component analysis in R,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.67,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+1281,tacmagic: Positron emission tomography analysis in R,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+662,EmissV: an R package to create vehicular and other emissions for air quality models,R,"['Ris', 'Data Analytics', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Software Analytics']",True,,0.62,"{""categories"": [""Ris"", ""Data Analytics"", ""Process""]}"
+7869,FedIRT: An R package and shiny app for estimating federated item response theory models,R,"['Modeling And Simulation', 'Data Analytics', 'Ui', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.98,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ui"", ""Ris"", ""Software"", ""Process""]}"
+7917,PyStarshade: Simulating High-Contrast Imaging of Exoplanets with Starshades,Python,"['Modeling And Simulation', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Process""]}"
+7522,DiffOpt: Parallel optimization of Jax models,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.88,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+6768,DUGseis: A Python package for real-time and post-processing of picoseismicity,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.89,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+6667,BayesEoR: Bayesian 21-cm Power Spectrum Estimation from Interferometric Visibilities,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+7201,bayes_spec: A Bayesian Spectral Line Modeling Framework for Astrophysics,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.74,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+6507,PyXAB - A Python Library for $\mathcal{X}$-Armed Bandit and Online Blackbox Optimization Algorithms,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.76,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+6624,GeneScape: A Python package for gene ontology visualization,Python,"['Data Analytics', 'Ui', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.68,"{""categories"": [""Data Analytics"", ""Ui"", ""Software"", ""Ris""]}"
+6340,ThermoParser: Streamlined Analysis of Thermoelectric Properties,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.6,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+6270,hplc-py: A Python Utility For Rapid Quantification of Complex Chemical Chromatograms,Python,"['Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.53,"{""categories"": [""Data Analytics"", ""Ris""]}"
+5389,"BurnMan -- a Python toolkit for planetary geophysics, geochemistry and thermodynamics",Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software""]}"
+4969,ronswanson: Building Table Models for 3ML,Python,"['Software', 'Process', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.61,"{""categories"": [""Software"", ""Process"", ""Data Analytics""]}"
+4650,MNELAB: a graphical user interface for MNE-Python,Python,"['Ui', 'Ris', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Ui"", ""Ris"", ""Data Analytics""]}"
+4706,PatchView: A Python Package for Patch-clamp Data Analysis and Visualization,Python,"['Data Analytics', 'Ris', 'Software', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.77,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Ui""]}"
+4362,Pose2Sim: An open-source Python package for multiview markerless kinematics,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Ris""]}"
+4354,mixComp: An R package for estimating complexity of a mixture,R,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+3447,COVID-19 Lung Segmentation,Python,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+3097,epipack: An infectious disease modeling package for Python,Python,"['Modeling And Simulation', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+2815,effectsize: Estimation of Effect Size Indices and Standardized Parameters,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+2668,BrainGlobe Atlas API: a common interface for neuroanatomical atlases,Python,"['Ris', 'Software', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.63,"{""categories"": [""Ris"", ""Software"", ""Data Analytics""]}"
+2306,Methods and Algorithms for Correlation Analysis in R,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+1969,CoreBreakout: Subsurface Core Images to Depth-Registered Datasets,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+2122,Pippin: A pipeline for supernova cosmology,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+1352,prysm: A Python optics module,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.6,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+1341,Capytaine: a Python-based linear potential flow solver,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.72,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+847,sdmbench: R package for benchmarking species distribution models,R,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.73,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}"
+754,sjmisc: Data and Variable Transformation Functions,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+370,bsym: A basic symmetry module,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.58,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+8497,fairmetrics: An R package for group fairness evaluation,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+6925,SetVis: Visualizing Large Numbers of Sets and Intersections,Python,"['Data Analytics', 'Ui', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.59,"{""categories"": [""Data Analytics"", ""Ui"", ""Software""]}"
+7079,PyStack3D: A python package for fast image stack correction,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+6781,piar: Price Index Aggregation in R,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.56,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+6533,IKPLS: Improved Kernel Partial Least Squares and Fast Cross-Validation Algorithms for Python with CPU and GPU Implementations Using NumPy and JAX,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+6695,movement_primitives: Imitation Learning of Cartesian Motion with Movement Primitives,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+6294,fABBA: A Python library for the fast symbolic approximation of time series,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+6031,libEnsemble: A complete Python toolkit for dynamic ensembles of calculations,Python,"['Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.49,"{""categories"": [""Software"", ""Process""]}"
+5496,iTensor: An R package for independent component analysis-based matrix/tensor decomposition,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+5015,nnTensor: An R package for non-negative matrix/tensor decomposition,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5329,Qiskit Experiments: A Python package to characterize and calibrate quantum computers,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software""]}"
+4655,metrica: an R package to evaluate prediction performance of regression and classification point-forecast models,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+4762,Pyripherals: A Python Package for Communicating with Peripheral Electronic Devices,Python,"['Hardware', 'Software', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.57,"{""categories"": [""Hardware"", ""Software"", ""Data Analytics""]}"
+3428,PERFORM: A Python package for developing reduced-order models for reacting fluid flows,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4265,MitoHEAR: an R package for the estimation and downstream statistical analysis of the mitochondrial DNA heteroplasmy calculated from single-cell datasets,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.67,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+4014,SurfinPy 2.0: A Phase Diagram Generator for Surfaces and Bulk Phases,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.89,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process"", ""Software""]}"
+3658,pyCSEP: A Python Toolkit For Earthquake Forecast Developers,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+3782,sbp-env: A Python Package for Sampling-based Motion Planner and Samplers,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+3168,eemont: A Python package that extends Google Earth Engine,Python,"['Ris', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Ris"", ""Data Analytics"", ""Software""]}"
+3191,Analysis of Prehistoric Iconography with the R package iconr,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.66,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+2594,textnets: A Python package for text analysis with networks,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+2554,The Dusty Evolved Star Kit (DESK): A Python package for fitting the Spectral Energy Distribution of Evolved Stars,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.9,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+2049,MF2: A Collection of Multi-Fidelity Benchmark Functions in Python,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+1820,memochange: An R package for estimation procedures and tests for persistent time series,R,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+1229,Model dispersion with PRISM; an alternative to MCMC for rapid analysis of models,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui""]}"
+774,quanteda: An R package for the quantitative analysis of textual data,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+809,"unyt: Handle, manipulate, and convert data with units in Python",Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5848,HNN-core: A Python software for cellular and circuit-level interpretation of human MEG/EEG,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Ui']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Ui']",True,,0.8,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Ui""]}"
+5155,pysr3: A Python Package for Sparse Relaxed Regularized Regression,Python,"['Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Ris', 'Ui']",True,,0.49,"{""categories"": [""Data Analytics"", ""Software""]}"
+8164,RadGEEToolbox: Streamlined Multispectral &amp; SAR Analysis for Google Earth Engine,Python,"['Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.52,"{""categories"": [""Data Analytics"", ""Ris""]}"
+5549,OmniTrax: A deep learning-driven multi-animal tracking and pose-estimation add-on for Blender,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.63,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5671,UQTestFuns: A Python3 library of uncertainty quantification (UQ) test functions,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.63,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4406,GHEtool: An open-source tool for borefield sizing in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.69,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+3484,SurPyval: Survival Analysis with Python,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.7,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+1399,Fruitbat: A Python Package for Estimating Redshifts of Fast Radio Bursts,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Ris']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+1056,polyCub: An R package for Integration over Polygons,R,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software', 'Software Analytics']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+6284,LabelProp: A semi-automatic segmentation tool for 3D medical images,Python,"['Ris', 'Ui', 'Software', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Software', 'Ui']",True,,0.69,"{""categories"": [""Ris"", ""Ui"", ""Software"", ""Data Analytics""]}"
+7633,foamlib: A modern Python package for working with OpenFOAM,Python,"['Software', 'Ris', 'Data Analytics']","['Data Analytics', 'Modeling And Simulation', 'Software', 'Ui']",True,,0.61,"{""categories"": [""Software"", ""Ris"", ""Data Analytics""]}"
+6713,Simulation Decomposition in Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software', 'Ui']",True,,0.65,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+2604,OpenDrop: Open-source software for pendant drop tensiometry & contact angle measurements,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software', 'Ui']",True,,0.71,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+7852,PyRASA - Spectral parametrization in python based on IRASA,Python,"['Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.51,"{""categories"": [""Data Analytics"", ""Ris""]}"
+7360,HOI: A Python toolbox for high-performance estimation of Higher-Order Interactions from multivariate data,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.65,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+7305,"harmonize-wq: Standardize, clean and wrangle Water Quality Portal data into more analytic-ready formats",Python,"['Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.52,"{""categories"": [""Data Analytics"", ""Ris""]}"
+6971,"snSMART: An R Package for Small Sample, Sequential, Multiple Assignment, Randomized Trial Data Analysis",R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5567,COOLEST: COde-independent Organized LEns STandard,Python,"['Ris', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.6,"{""categories"": [""Ris"", ""Data Analytics"", ""Software""]}"
+5225,popkinmocks: mock IFU datacubes for modelling stellar populations and kinematics,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+3723,partycls: A Python package for structural clustering,Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.6,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+2241,Hypothesize: Robust Statistics for Python,Python,"['Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.49,"{""categories"": [""Data Analytics"", ""Software""]}"
+1983,OrNet - a Python Toolkit to Model the Diffuse Structure of Organelles as Social Networks,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ris""]}"
+1525,multimatch-gaze: The MultiMatch algorithm for gaze path comparison in Python,Python,"['Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.51,"{""categories"": [""Data Analytics"", ""Ris""]}"
+1596,ivis: dimensionality reduction in very large datasets using Siamese Networks,Python,"['Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.49,"{""categories"": [""Data Analytics"", ""Software""]}"
+1576,MemCNN: A Python/PyTorch package for creating memory-efficient invertible neural networks,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+990,"Pyoints: A Python package for point cloud, voxel and raster processing.",Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+259,"Neuropsydia.py: A Python Module for Creating Experiments, Tasks and Questionnaires",Python,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+34,Osprey: Hyperparameter Optimization for Machine Learning,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Modeling And Simulation', 'Software']",True,,0.6,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+7312,PANINIpy: Package of Algorithms for Nonparametric Inference with Networks In Python,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+6495,"STReNGTHS, a Python package to model and simulate complex reaction-diffusion systems",Python,"['Modeling And Simulation', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.55,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+6469,Contextualized: Heterogeneous Modeling Toolbox,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+6058,Shapelets: A Python package implementing shapelet functions and their applications,Python,"['Data Analytics', 'Modeling And Simulation', 'Ris', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.79,"{""categories"": [""Data Analytics"", ""Modeling And Simulation"", ""Ris"", ""Software""]}"
+3865,GGLasso - a Python package for General Graphical Lasso computation,Python,"['Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.49,"{""categories"": [""Data Analytics"", ""Software""]}"
+3521,buildH: Build hydrogen atoms from united-atom molecular dynamics of lipids and calculate the order parameters,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation']",True,,0.71,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+3313,diyepw: A Python package for Do-It-Yourself EnergyPlus weather file generation,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+2940,fuelcell: A Python package and graphical user interface for electrochemical data analysis,Python,"['Data Analytics', 'Ui', 'Ris']","['Data Analytics', 'Modeling And Simulation']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ui"", ""Ris""]}"
+2180,Sensie: Probing the sensitivity of neural networks,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+1910,Dryft: A Python and MATLAB package to correct drifting ground reaction force signals during treadmill running,Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Modeling And Simulation']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+1272,NeuroDSP: A package for neural digital signal processing,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+900,GB code: A grain boundary generation code,Python,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Data Analytics', 'Modeling And Simulation']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}"
+5561,neotoma2: An R package to access data from the Neotoma Paleoecology Database,R,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.75,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+2927,bcdata: An R package for searching & retrieving data from the B.C. Data Catalogue,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+1444,modelDown: automated website generator with interpretable documentation for predictive machine learning models,R,"['Data Analytics', 'Software', 'Ui', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.8,"{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process"", ""Ris""]}"
+883,jstor: Import and Analyse Data from Scientific Texts,R,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.74,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+5573,"brains-py, A framework to support research on energy-efficient unconventional hardware for machine learning",Python,"['Modeling And Simulation', 'Data Analytics', 'Hardware', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.87,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Hardware"", ""Software"", ""Process""]}"
+4947,robnptests -- An R package for robust two-sample location and dispersion tests,R,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.73,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+4335,Archeofrag: an R package for Refitting and Spatial Analysis in Archaeology,R,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.7,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+2071,osfr: An R Interface to the Open Science Framework,R,"['Software', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.59,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+7343,"modisfast: An R package for fast and efficient access to MODIS, VIIRS and GPM Earth Observation data",R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.65,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+6500,quadkeyr: Tools for converting QuadKey-identified datasets (Microsoft's Bing Maps Tile System) into raster images and analyzing Meta (Facebook) Mobility Data,R,"['Data Analytics', 'Ui', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.64,"{""categories"": [""Data Analytics"", ""Ui"", ""Ris""]}"
+5505,occupationMeasurement: A Comprehensive Toolbox for Interactive Occupation Coding in Surveys,R,"['Ui', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.67,"{""categories"": [""Ui"", ""Data Analytics"", ""Software"", ""Process""]}"
+3900,cffr: Generate Citation File Format Metadata for R Packages,R,"['Software', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.57,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+1035,"nasapower: A NASA POWER Global Meteorology, Surface Solar Energy and Climatology Data Client for R",R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+550,The drake R package: a pipeline toolkit for reproducibility and high-performance computing,R,"['Software', 'Process', 'Data Analytics']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.64,"{""categories"": [""Software"", ""Process"", ""Data Analytics""]}"
+332,The country converter coco - a Python package for converting country names between different classification schemes,Python,"['Software', 'Data Analytics', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.59,"{""categories"": [""Software"", ""Data Analytics"", ""Process""]}"
+135,batchtools: Tools for R to work on batch systems,R,"['Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software', 'Ui']",True,,0.5,"{""categories"": [""Software"", ""Process""]}"
+7697,MEDUSA: An R tool to model equity and distributional impacts,R,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+7932,ParquetDB: A Lightweight Python Parquet-Based Database,Python,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+6943,DendroPy 5: a mature Python library for phylogenetic computing,Python,"['Ris', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+6215,"dwctaxon, an R package for editing and validating taxonomic data in Darwin Core format",R,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.74,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+5687,GGoutlieR: an R package to identify and visualize unusual geo-genetic patterns of biological samples,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+5613,FuzzyClass: A family of Fuzzy and Non-Fuzzy probabilistic-based classifiers,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+5453,tehtuner: An R package to fit and tune models for the conditional average treatment effect,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+3820,rfasst: An R tool to estimate air pollution impacts on health and agriculture,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.6,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+2409,Vizumap: an R package for visualising uncertainty in spatial data,R,"['Data Analytics', 'Ui', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Data Analytics"", ""Ui"", ""Ris""]}"
+2362,AutoFunc: A Python package for automating and verifying functional modeling,Python,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.75,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Process""]}"
+2800,Rdataretriever: R Interface to the Data Retriever,R,"['Data Analytics', 'Software', 'Ris', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Software"", ""Ris"", ""Process""]}"
+2473,CPgeneProfiler: A lightweight R package to profile the Carbapenamase genes from genome assemblies,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+1768,bbsAssistant: An R package for downloading and handling data and information from the North American Breeding Bird Survey,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+1665,molic: An R package for multivariate outlier detection in contingency tables,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+1661,virtualNicheR: generating virtual fundamental and realised niches for use in virtual ecology experiments,R,"['Modeling And Simulation', 'Ris', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Process""]}"
+1593,ccostr: An R package for estimating mean costs with censored data,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+911,qsort R package: A New Tool for Scoring Q-sort Data,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.7,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+657,autoplotly: An R package for automatic generation of interactive visualizations for statistical results,R,"['Data Analytics', 'Ui', 'Software']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.57,"{""categories"": [""Data Analytics"", ""Ui"", ""Software""]}"
+338,RefManageR: Import and Manage BibTeX and BibLaTeX References in R,R,"['Software', 'Process', 'Ris']","['Data Analytics', 'Process', 'Ris', 'Software']",True,,0.59,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+653,Spiral: splitters for identifiers in source code files,Python,"['Software Analytics', 'Software', 'Process']","['Data Analytics', 'Process', 'Software', 'Ui']",True,,0.56,"{""categories"": [""Software Analytics"", ""Software"", ""Process""]}"
+4937,SSMSE: An R package for Management Strategy Evaluation with Stock Synthesis Operating Models,R,"['Modeling And Simulation', 'Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Process', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris"", ""Process""]}"
+216,Fitting a Gamma-Gompertz survival model to capture-recapture data collected on free-ranging animal populations,R,"['Modeling And Simulation', 'Data Analytics', 'Ris']","['Data Analytics', 'Process']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+6918,OpenRepGrid: An R Package for the Analysis of Repertory Grid Data,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+2651,medrxivr: Accessing and searching medRxiv and bioRxiv preprint data in R,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+1926,OpenTripPlanner for R,R,"['Data Analytics', 'Software', 'Process', 'Ris']","['Data Analytics', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.72,"{""categories"": [""Data Analytics"", ""Software"", ""Process"", ""Ris""]}"
+6868,APackOfTheClones: Visualization of clonal expansion with circle packing,R,"['Data Analytics', 'Ris', 'Ui', 'Process', 'Software']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.82,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process"", ""Software""]}"
+5844,verdata: An R package for analyzing data from the Truth Commission in Colombia,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+5334,PostcodesioR: An R package for UK geocoding,R,"['Software', 'Data Analytics', 'Ris']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.63,"{""categories"": [""Software"", ""Data Analytics"", ""Ris""]}"
+4056,APCtools: Descriptive and Model-based Age-Period-Cohort Analysis,R,"['Data Analytics', 'Modeling And Simulation', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.68,"{""categories"": [""Data Analytics"", ""Modeling And Simulation"", ""Process""]}"
+3358,experDesign: stratifying samples into batches with minimal bias,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.61,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+1566,kdensity: An R package for kernel density estimation with parametric starts and asymmetric kernels,R,"['Data Analytics', 'Software', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.71,"{""categories"": [""Data Analytics"", ""Software"", ""Ris"", ""Process""]}"
+765,Philentropy: Information Theory and Distance Quantification with R,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.58,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+648,comorbidity: An R package for computing comorbidity scores,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.69,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+314,USAboundaries: Historical and Contemporary Boundaries of the United States of America,R,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Ris', 'Software', 'Software Analytics']",True,,0.72,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}"
+8063,medRCT: Causal mediation analysis estimating interventional effects mapped to a target trial in R,R,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.7,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}"
+7211,ollamar: An R package for running large language models,R,"['Software', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.57,"{""categories"": [""Software"", ""Ris"", ""Process""]}"
+7024,densify: An R package to reduce empty cells in data frames of typological linguistic data,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5987,greeks: Sensitivities of Prices of Financial Options and Implied Volatilities,R,"['Modeling And Simulation', 'Data Analytics', 'Software', 'Ui', 'Process', 'Ris']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.99,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software"", ""Ui"", ""Process"", ""Ris""]}"
+5575,Bidsme: expandable BIDS-ifier of brain imagery datasets,Python,"['Ris', 'Data Analytics', 'Software']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.62,"{""categories"": [""Ris"", ""Data Analytics"", ""Software""]}"
+5750,"einprot: flexible, easy-to-use, reproducible workflows for statistical analysis of quantitative proteomics data",R,"['Data Analytics', 'Ris', 'Ui', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.83,"{""categories"": [""Data Analytics"", ""Ris"", ""Ui"", ""Process""]}"
+4848,UBayFS: An R Package for User Guided Feature Selection,R,"['Data Analytics', 'Software', 'Ui', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.7,"{""categories"": [""Data Analytics"", ""Software"", ""Ui"", ""Process""]}"
+3888,mmrefpoints: Projecting long-term marine mammal abundance with bycatch,R,"['Data Analytics', 'Ui', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.76,"{""categories"": [""Data Analytics"", ""Ui"", ""Ris"", ""Process""]}"
+3659,argodata: An R interface to oceanographic data from the International Argo Program,R,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.73,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+1342,corporaexplorer: An R package for dynamic exploration of text collections,R,"['Data Analytics', 'Ui', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software', 'Ui']",True,,0.71,"{""categories"": [""Data Analytics"", ""Ui"", ""Software"", ""Process""]}"
+8341,ChemInformant: A Robust and Workflow-Centric Python Client for High-Throughput PubChem Access,Python,"['Data Analytics', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.74,"{""categories"": [""Data Analytics"", ""Ris"", ""Software"", ""Process""]}"
+7012,universalmotif: An R package for biological motif analysis,R,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.75,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+6305,AgriFoodPy: a package for modelling food systems,Python,"['Modeling And Simulation', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+6033,helios: An R package to process heating and cooling degrees for GCAM,R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+5879,inAccessMod: An R package to automate data downloading and processing for AccessMod,R,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Ris', 'Software']",True,,0.65,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+4015,rmap: An R package to plot and compare tabular data on customizable maps across scenarios and time,R,"['Data Analytics', 'Ui', 'Software', 'Ris']","['Data Analytics', 'Ris', 'Software']",True,,0.74,"{""categories"": [""Data Analytics"", ""Ui"", ""Software"", ""Ris""]}"
+2285,PupillometryR: An R package for preparing and analysing pupillometry data,R,"['Data Analytics', 'Ris', 'Software']","['Data Analytics', 'Ris', 'Software']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Software""]}"
+790,phylogram: an R package for phylogenetic analysis with nested lists,R,"['Ris', 'Data Analytics', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.7,"{""categories"": [""Ris"", ""Data Analytics"", ""Software"", ""Process""]}"
+176,remBoot: An R package for Random Encounter Modelling,R,"['Modeling And Simulation', 'Ris', 'Software', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.76,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software"", ""Process""]}"
+51,rdefra: Interact with the UK AIR Pollution Database from DEFRA,nan,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Ris', 'Software']",True,,0.75,"```json
+{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}
+```"
+4036,sweater: Speedy Word Embedding Association Test and Extras Using R,R,"['Data Analytics', 'Software', 'Process']","['Data Analytics', 'Software', 'Software Analytics', 'Ui']",True,,0.58,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+6696,The ARC-OPT Library for Whole-Body Control of Robotic Systems,C++,"['Modeling And Simulation', 'Software', 'Ris']","['Data Analytics', 'Software', 'Software Analytics']",True,,0.69,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+1041,"hillR: taxonomic, functional, and phylogenetic diversity and similarity through Hill Numbers",R,"['Data Analytics', 'Ris', 'Process']","['Data Analytics', 'Software', 'Software Analytics']",True,,0.62,"{""categories"": [""Data Analytics"", ""Ris"", ""Process""]}"
+5220,TSInterpret: A Python Package for the Interpretability of Time Series Classification,Python,"['Data Analytics', 'Software', 'Ui']","['Data Analytics', 'Software', 'Ui']",True,,0.64,"{""categories"": [""Data Analytics"", ""Software"", ""Ui""]}"
+7484,ExaDEM: a HPC application based on exaNBody targeting scalable DEM simulations with complex particle shapes,C++,"['Modeling And Simulation', 'Software', 'Ris']","['Data Analytics', 'Software']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+6224,SelfEEG: A Python library for Self-Supervised Learning in Electroencephalography,Python,"['Data Analytics', 'Software', 'Ris']","['Data Analytics', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+5026,"mlpack 4: a fast, header-only C++ machine learning library",C++,"['Data Analytics', 'Software']","['Data Analytics', 'Software']",True,,0.52,"{""categories"": [""Data Analytics"", ""Software""]}"
+1285,"Detecting Fraud in Online Surveys by Tracing, Scoring, and Visualizing IP Addresses",R,"['Data Analytics', 'Software Analytics', 'Process']","['Data Analytics', 'Software']",True,,0.61,"{""categories"": [""Data Analytics"", ""Software Analytics"", ""Process""]}"
+4945,RingsPy: A Python package for Voronoi mesh generation of cellular solids with radial growth pattern,Python,"['Modeling And Simulation', 'Software', 'Ris']",['Data Analytics'],True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+3440,Nominally: A Name Parser for Record Linkage,Python,"['Data Analytics', 'Software', 'Ris']",['Data Analytics'],True,,0.6,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+2367,"HOOMD-TF: GPU-Accelerated, Online Machine Learning in the HOOMD-blue Molecular Dynamics Engine",Python,"['Modeling And Simulation', 'Data Analytics', 'Ris']",['Data Analytics'],True,,0.71,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Ris""]}"
+828,The hhi Package: Streamlined Calculation and Visualization of Herfindahl-Hirschman Index Scores,R,"['Data Analytics', 'Ui']",['Data Analytics'],True,,0.51,"{""categories"": [""Data Analytics"", ""Ui""]}"
+2783,SLAM Toolbox: SLAM for the dynamic world,C++,"['Modeling And Simulation', 'Software', 'Ui', 'Process']","['Hardware', 'Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.95,"```json
+{""categories"": [""Modeling And Simulation"", ""Software"", ""Ui"", ""Process""]}
+```"
+7958,REMORA: Regional Modeling of Oceans Refined Adaptively (built on AMReX),C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Modeling And Simulation', 'Ris', 'Software Analytics']",True,,0.67,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+5202,ERF: Energy Research and Forecasting,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Modeling And Simulation', 'Ris', 'Software Analytics']",True,,0.85,"```json
+{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}
+```"
+5450,PeleLMeX: an AMR Low Mach Number Reactive Flow Simulation Code without level sub-cycling,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Modeling And Simulation', 'Ris']",True,,0.79,"```json
+{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}
+```"
+6881,DTW-C++: Fast dynamic time warping and clustering of time series data,C++,"['Data Analytics', 'Software']","['Hardware', 'Modeling And Simulation', 'Software Analytics']",True,,0.51,"{""categories"": [""Data Analytics"", ""Software""]}"
+280,AmgXWrapper: An interface between PETSc and the NVIDIA AmgX library,C++,"['Modeling And Simulation', 'Software']","['Hardware', 'Modeling And Simulation', 'Software', 'Software Analytics']",True,,0.55,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+6948,small_gicp: Efficient and parallel algorithms for point cloud registration,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Modeling And Simulation', 'Software']",True,,0.65,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4843,MParT: Monotone Parameterization Toolkit,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Modeling And Simulation', 'Software']",True,,0.77,"```json
+{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}
+```"
+1097,"OApackage: A Python package for generation and analysis of orthogonal arrays, optimal designs and conference designs",C++,"['Modeling And Simulation', 'Data Analytics', 'Software']","['Hardware', 'Modeling And Simulation', 'Software']",True,,0.8,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Software""]}
+```"
+8391,kokkos-fft: A shared-memory FFT for the Kokkos ecosystem,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Ris', 'Software', 'Software Analytics']",True,,0.7,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+7719,"MFEM/MGIS, a HPC mini-application targeting nonlinear thermo-mechanical simulations of nuclear fuels at mesoscale",C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Ris', 'Software', 'Software Analytics']",True,,0.65,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4693,oxDNA: coarse-grained simulations of nucleic acids made simple,C++,"['Modeling And Simulation', 'Software', 'Process', 'Ris']","['Hardware', 'Software', 'Software Analytics']",True,,0.78,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process"", ""Ris""]}"
+2663,rFBP: Replicated Focusing Belief Propagation algorithm,C++,"['Modeling And Simulation', 'Software', 'Process']","['Hardware', 'Software', 'Software Analytics']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+8401,VILLASnode: An Open-Source Real-time Multi-protocol Gateway,C++,"['Software', 'Hardware', 'Process']","['Hardware', 'Software']",True,,0.62,"{""categories"": [""Software"", ""Hardware"", ""Process""]}"
+7586,SynxFlow: A GPU-accelerated Python package for multi-hazard simulations,C++,"['Modeling And Simulation', 'Software']","['Hardware', 'Software']",True,,0.58,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+5417,EDP: a program for projecting electron densities from VASP onto planes,C++,"['Ris', 'Software']","['Hardware', 'Software']",True,,0.48,"{""categories"": [""Ris"", ""Software""]}"
+4591,Mallob: Scalable SAT Solving On Demand With Decentralized Job Scheduling,C++,"['Software', 'Process']","['Hardware', 'Software']",True,,0.45,"{""categories"": [""Software"", ""Process""]}"
+1423,CRED: a rapid peak caller for Chem-seq data,C,['Ris'],"['Hardware', 'Software']",True,,0.39,"{""categories"": [""Ris""]}"
+6724,PySymmPol - Symmetric Polynomials,Python,"['Modeling And Simulation', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4991,Pyccel: a Python-to-X transpiler for scientific high-performance computing,Python,"['Modeling And Simulation', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4460,"Mat-dp: An open-source Python model for analysing material demand projections and their environmental implications, which result from building low-carbon systems.",Python,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Ris']","['Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics', 'Ui']",True,,1.03,"```json
+{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Ris""]}
+```"
+4142,PyAMG: Algebraic Multigrid Solvers in Python,Python,"['Modeling And Simulation', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software', 'Software Analytics']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+4900,PyKronecker: A Python Library for the Efficient Manipulation of Kronecker Products and Related Structures,Python,"['Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software', 'Ui']",True,,0.5,"{""categories"": [""Software"", ""Process""]}"
+4904,PyAutoCTI: Open-Source Charge Transfer Inefficiency Calibration,Python,"['Software', 'Process', 'Ris']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.6,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+3500,Radial Interstices Enable Speedy Low-volume Imaging,C++,"['Ris', 'Software']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.52,"{""categories"": [""Ris"", ""Software""]}"
+3556,Symfem: a symbolic finite element definition library,Python,"['Modeling And Simulation', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.65,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+1850,simode: R Package for Statistical Inference of Ordinary Differential Equations using Separable Integral-Matching,R,"['Modeling And Simulation', 'Data Analytics', 'Process', 'Ris']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.82,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process"", ""Ris""]}"
+1761,xrnet: Hierarchical Regularized Regression to Incorporate External Data,R,"['Data Analytics', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.58,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+1486,FRIDGe: Fast Reactor Input Deck Generator,Python,"['Modeling And Simulation', 'Software', 'Process']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+937,ungroup: An R package for efficient estimation of smooth distributions from coarsely binned data,R,"['Data Analytics', 'Software', 'Ris']","['Modeling And Simulation', 'Process', 'Ris', 'Software']",True,,0.63,"{""categories"": [""Data Analytics"", ""Software"", ""Ris""]}"
+4719,strucscan: A lightweight Python-based framework for high-throughput material simulation,Python,"['Modeling And Simulation', 'Ris', 'Software', 'Ui', 'Process']","['Modeling And Simulation', 'Ris', 'Software', 'Ui']",True,,0.86,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software"", ""Ui"", ""Process""]}"
+7881,CADET-Core 5.0: High-Performance Solver for Advanced Biotechnology Process Modeling,C++,"['Modeling And Simulation', 'Software', 'Ris']","['Modeling And Simulation', 'Ris', 'Software']",True,,0.71,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+7491,jax-smfsb: A Python library for stochastic systems biology modelling and inference,Python,"['Modeling And Simulation', 'Ris', 'Software', 'Process']","['Modeling And Simulation', 'Ris', 'Software']",True,,0.76,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software"", ""Process""]}"
+2050,SpiceyPy: a Pythonic Wrapper for the SPICE Toolkit,Python,"['Software', 'Process', 'Ris']","['Modeling And Simulation', 'Ris', 'Software']",True,,0.58,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+3519,BisPy: Bisimulation in Python,Python,"['Software', 'Process']","['Modeling And Simulation', 'Ris']",True,,0.47,"{""categories"": [""Software"", ""Process""]}"
+373,array_split: Multi-dimensional array partitioning,Python,"['Software', 'Process']","['Modeling And Simulation', 'Ris']",True,,0.45,"{""categories"": [""Software"", ""Process""]}"
+4369,Magphi: Sequence extraction tool from FASTA and GFF3 files using seed pairs,Python,"['Ris', 'Software', 'Process']","['Modeling And Simulation', 'Software Analytics']",True,,0.57,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+2290,dcgp: Differentiable Cartesian Genetic Programming made easy.,C++,"['Modeling And Simulation', 'Software']","['Modeling And Simulation', 'Software', 'Software Analytics']",True,,0.57,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+1063,3D ultrasound file reading and coordinate transformations,C++,"['Ris', 'Software', 'Process']","['Modeling And Simulation', 'Software', 'Software Analytics']",True,,0.57,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+153,SlicerITKUltrasound: A 3D Slicer extension for scan conversion of B-mode and next-generation ultrasound imaging modalities,C++,"['Ris', 'Software', 'Ui']","['Modeling And Simulation', 'Software']",True,,0.61,"{""categories"": [""Ris"", ""Software"", ""Ui""]}"
+8330,SDA: a symbolic differential algebra package in C++,C++,"['Modeling And Simulation', 'Software']",['Modeling And Simulation'],True,,0.55,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+3098,coxeter: A Python package for working with shapes,Python,"['Modeling And Simulation', 'Software', 'Data Analytics']",['Modeling And Simulation'],True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Data Analytics""]}"
+1693,kramersmoyal: Kramers--Moyal coefficients for stochastic processes,Python,"['Modeling And Simulation', 'Data Analytics']",['Modeling And Simulation'],True,,0.59,"{""categories"": [""Modeling And Simulation"", ""Data Analytics""]}"
+729,PyCM: Multiclass confusion matrix library in Python,Python,"['Data Analytics', 'Software']",['Modeling And Simulation'],True,,0.49,"{""categories"": [""Data Analytics"", ""Software""]}"
+597,FNFT: A Software Library for Computing Nonlinear Fourier Transforms,C,"['Modeling And Simulation', 'Software']",['Modeling And Simulation'],True,,0.54,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+258,Noisyopt: A Python library for optimizing noisy functions.,Python,"['Modeling And Simulation', 'Software']",['Modeling And Simulation'],True,,0.55,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+4032,CGC: a Scalable Python Package for Co- and Tri-Clustering of Geodata Cubes,Python,"['Software', 'Process']","['Process', 'Ris', 'Software', 'Software Analytics']",True,,0.49,"{""categories"": [""Software"", ""Process""]}"
+1493,slurmR: A lightweight wrapper for HPC with Slurm,R,"['Software', 'Process']","['Process', 'Ris', 'Software', 'Software Analytics']",True,,0.46,"{""categories"": [""Software"", ""Process""]}"
+7562,PyOrthanc: A Python Interface for Orthanc DICOM Servers,Python,"['Ris', 'Software', 'Process']","['Process', 'Ris', 'Software', 'Ui']",True,,0.6,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+6235,Koverage: Read-coverage analysis for massive (meta)genomics datasets,Python,"['Ris', 'Process', 'Software']","['Process', 'Ris', 'Software', 'Ui']",True,,0.59,"{""categories"": [""Ris"", ""Process"", ""Software""]}"
+2403,Caliban: Docker-based job manager for reproducible workflows,Python,"['Software', 'Process']","['Process', 'Ris', 'Software', 'Ui']",True,,0.48,"{""categories"": [""Software"", ""Process""]}"
+2076,fqfa: A pure Python package for genomic sequence files,Python,"['Software', 'Process', 'Ris']","['Process', 'Ris', 'Software', 'Ui']",True,,0.58,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+695,dustmaps: A Python interface for maps of interstellar dust,Python,"['Ris', 'Software', 'Process']","['Process', 'Ris', 'Software', 'Ui']",True,,0.6,"{""categories"": [""Ris"", ""Software"", ""Process""]}"
+2917,SymbiotaR2: An R Package for Accessing Symbiota2 Data,R,"['Software', 'Ris', 'Process']","['Process', 'Ris', 'Software']",True,,0.58,"{""categories"": [""Software"", ""Ris"", ""Process""]}"
+4458,CiteLang: Modeling the Research Software Ecosystem,Python,"['Software Analytics', 'Process', 'Ris']","['Process', 'Ris']",True,,0.6,"{""categories"": [""Software Analytics"", ""Process"", ""Ris""]}"
+4304,pyABC: Efficient and robust easy-to-use approximate Bayesian computation,Python,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Process', 'Ris']",True,,0.69,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+2752,The o80 C++ templated toolbox: Designing customized Python APIs for synchronizing realtime processes,C++,"['Software', 'Hardware', 'Process']","['Process', 'Software']",True,,0.57,"{""categories"": [""Software"", ""Hardware"", ""Process""]}"
+596,Nostril: A nonsense string evaluator written in Python,Python,"['Software', 'Process']","['Process', 'Ui']",True,,0.46,"{""categories"": [""Software"", ""Process""]}"
+3389,model-traits: Model attribute definitions for scientific simulations in C++,C++,"['Modeling And Simulation', 'Software', 'Process']","['Ris', 'Software', 'Software Analytics']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+7104,EPyT-Flow: A Toolkit for Generating Water Distribution Network Data,Python,"['Software', 'Process', 'Ris']","['Ris', 'Software', 'Ui']",True,,0.58,"{""categories"": [""Software"", ""Process"", ""Ris""]}"
+2331,Flint: a simulator for biological and physiological models in ordinary and stochastic differential equations,C++,"['Modeling And Simulation', 'Software', 'Ris']","['Ris', 'Software', 'Ui']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Ris""]}"
+1207,cartoee: Publication quality maps using Earth Engine,Python,"['Ui', 'Process', 'Ris']","['Ris', 'Software', 'Ui']",True,,0.59,"{""categories"": [""Ui"", ""Process"", ""Ris""]}"
+8564,anadrofish: Anadromous fish population responses to dams,R,"['Process', 'Ris']","['Ris', 'Software']",True,,0.48,"{""categories"": [""Process"", ""Ris""]}"
+7946,abspy: A Python package for 3D adaptive binary space partitioning and modeling,Python,"['Modeling And Simulation', 'Software', 'Process']","['Ris', 'Software']",True,,0.63,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+5572,dsmmR: Estimation and Simulation of Drifting Semi-Markov Models,R,"['Modeling And Simulation', 'Data Analytics', 'Process']","['Ris', 'Software']",True,,0.68,"{""categories"": [""Modeling And Simulation"", ""Data Analytics"", ""Process""]}"
+6181,"dropout: an R Package for Addressing Dropouts, Missing Values, and Sectional Challenges in Survey Data Analysis",R,"['Data Analytics', 'Software', 'Process']","['Ris', 'Software']",True,,0.57,"{""categories"": [""Data Analytics"", ""Software"", ""Process""]}"
+5174,PyBullet Industrial: A process-aware robot simulation,Python,"['Modeling And Simulation', 'Process', 'Ris']","['Ris', 'Software']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Process"", ""Ris""]}"
+4886,PyArabic: A Python package for Arabic text,Python,"['Software', 'Ris']","['Ris', 'Software']",True,,0.47,"{""categories"": [""Software"", ""Ris""]}"
+248,pyhector: A Python interface for the simple climate model Hector,Python,"['Modeling And Simulation', 'Software', 'Process']","['Ris', 'Ui']",True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+6653,BESMARTS: A toolkit for data-driven force field design using binary-encoded SMARTS,Python,"['Software', 'Ris']",['Ris'],True,,0.48,"{""categories"": [""Software"", ""Ris""]}"
+4305,MeMC: A package for Monte Carlo simulations of spherical shells,C++,"['Modeling And Simulation', 'Software']",['Ris'],True,,0.55,"{""categories"": [""Modeling And Simulation"", ""Software""]}"
+2564,pyOptSparse: A Python framework for large-scale constrained nonlinear optimization of sparse systems,Python,"['Modeling And Simulation', 'Software', 'Process']",['Ris'],True,,0.62,"{""categories"": [""Modeling And Simulation"", ""Software"", ""Process""]}"
+2645,BioGears: A C++ library for whole body physiology simulations,C++,"['Modeling And Simulation', 'Ris', 'Software']","['Software', 'Ui']",True,,0.66,"{""categories"": [""Modeling And Simulation"", ""Ris"", ""Software""]}"
+7478,MQT Core: The Backbone of the Munich Quantum Toolkit (MQT),C++,"['Software', 'Ris']",['Software'],True,,0.51,"{""categories"": [""Software"", ""Ris""]}"
+6638,EdgeVPN.io: Seamless Software-defined Layer 2 Virtual Networking for Edge Computing,Python,"['Software', 'Hardware']",['Software'],True,,0.46,"{""categories"": [""Software"", ""Hardware""]}"
+5194,A C++ Implementation of a Cartesian Impedance Controller for Robotic Manipulators,C++,"['Modeling And Simulation', 'Hardware', 'Software']",['Software'],True,,0.64,"{""categories"": [""Modeling And Simulation"", ""Hardware"", ""Software""]}"
+2976,Correlation: An Analysis Tool for Liquids and for Amorphous Solids,C++,"['Software', 'Ris']",['Software'],True,,0.5,"{""categories"": [""Software"", ""Ris""]}"
+3040,LibSWIFFT - A fast C/C++ Library for the SWIFFT Secure Homomorphic Hash Function,C++,"['Software', 'Process']",['Software'],True,,0.46,"{""categories"": [""Software"", ""Process""]}"
+1584,SODAR Core: a Django-based framework for scientific data management and analysis web apps,Python,"['Software', 'Ui', 'Process']",['Software'],True,,0.54,"{""categories"": [""Software"", ""Ui"", ""Process""]}"
+331,Pyrgg: Python Random Graph Generator,Python,"['Software', 'Data Analytics']",['Software'],True,,0.48,"{""categories"": [""Software"", ""Data Analytics""]}"
+281,OpenSpace: An open-source astrovisualization framework,C++,"['Ris', 'Software', 'Ui']",['Software'],True,,0.58,"{""categories"": [""Ris"", ""Software"", ""Ui""]}"
+29,Git-RDM: A research data management plugin for the Git version control system,Python,"['Software Analytics', 'Software', 'Process']",['Software'],True,,0.57,"{""categories"": [""Software Analytics"", ""Software"", ""Process""]}"
