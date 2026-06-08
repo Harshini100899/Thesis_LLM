@@ -7,7 +7,7 @@ import csv
 import ast
 
 
-def load_ground_truths(csv_path=r"c:\Users\eggoni\Desktop\llm\joss_all_with_dependency_labels1.csv"):
+def load_ground_truths(csv_path="datasets/joss_all_with_dependency_labels1.csv"):
     """Load ground truth dependencies from the CSV file.
     
     Returns:

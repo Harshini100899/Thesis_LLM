@@ -7,9 +7,11 @@ Usage:
     python evaluate_all.py --model llama3.3:70b --verbose
 """
 
-import argparse
 import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
+
+import argparse
 from typing import List
 from collections import Counter
 
@@ -29,8 +31,8 @@ from metrics import (
 )
 
 # Output files
-ALL_RESULTS_CSV = Path("all_labeled_results.csv")
-ALL_PERLABEL_CSV = Path("per_label_metrics_all.csv")
+ALL_RESULTS_CSV = Path("results/all_labeled_results.csv")
+ALL_PERLABEL_CSV = Path("results/per_label_metrics_all.csv")
 
 
 def classify_batch(projects, classifier, verbose=False):

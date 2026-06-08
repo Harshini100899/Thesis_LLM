@@ -1,5 +1,8 @@
 """
 Prompt variants for ablation study.
+Axes: shots (0/5/7/10) × CoT (no/yes) × descriptions (no/yes) × sculpting (no/yes)
+
+All examples are verified against joss_all_with_dependency_labels1.csv ground truth.
 All { } in JSON output lines are escaped as {{ }} so .format() works correctly.
 """
 
@@ -8,7 +11,7 @@ VALID_CATEGORIES = (
     "Integrative Analysis, Hardware, Software, Ui, Process, Ris"
 )
 
-# ── Shared category descriptions ────────────────────────────────────────────────
+# ── Shared category descriptions ─────────────────────────────────────────────────
 CATEGORY_DESCRIPTIONS = """CATEGORIES AND DEPENDENCY SIGNALS:
 
 1. Modeling And Simulation
@@ -53,199 +56,259 @@ CATEGORY_DESCRIPTIONS = """CATEGORIES AND DEPENDENCY SIGNALS:
    Signals: astropy, biopython, scanpy, pymatgen, rdkit, obspy, nibabel, mne, qiskit, h5py, ase, DESeq2, Seurat
 """
 
-# ── System prompt builders ───────────────────────────────────────────────────────
-def make_system(with_desc: bool) -> str:
+# ── Sculpting rules: hard NOT/ONLY-IF boundaries ─────────────────────────────────
+# Targeted at the lowest-scoring categories in stratification:
+#   Process (53%), Ui (43%), Software Analytics (28%), Hardware (5.8%), Integrative Analysis (2.8%)
+SCULPTING_RULES = """
+HARD BOUNDARY RULES — apply these before assigning any label:
+
+PROCESS — assign ONLY when 2+ distinct dev/build/test/docs tools are present:
+  ASSIGN   pytest + sphinx, tox + coverage, cmake + gtest + doxygen
+  NEVER    pytest alone, a single linter, or a single doc tool
+  NEVER    pytest/black/pylint that analyse others' code → that is Software Analytics
+
+HARDWARE — assign ONLY when the code interfaces with a physical device:
+  ASSIGN   pyserial, nidaqmx, pyvisa, RPi.GPIO, smbus2, nifpga, firmata
+  NEVER    torch, jax, cupy, numba (GPU compute is NOT hardware)
+  NEVER    HPC / parallel computing frameworks alone (Kokkos, MPI, OpenMP)
+
+UI — assign ONLY when the project provides an interactive user-facing interface:
+  ASSIGN   shiny, dash, streamlit, gradio, PyQt5/6, tkinter, ipywidgets, napari, flask
+  NEVER    matplotlib or ggplot2 used only for static plots
+  NEVER    knitr or rmarkdown used only for static reports/notebooks
+
+INTEGRATIVE ANALYSIS — assign ONLY when MULTIPLE HETEROGENEOUS sources are joined:
+  ASSIGN   intake + vtk, pangeo + muon, multi-modal fusion pipelines
+  NEVER    plotly or networkx used alone for visualisation
+  NEVER    pandas + numpy operating on a single homogeneous dataset
+
+SOFTWARE ANALYTICS — assign ONLY when the project analyses SOFTWARE ARTIFACTS:
+  ASSIGN   gitpython, pydriller, radon, lizard, tree-sitter, perceval
+  NEVER    analysing scientific/experimental data (→ Data Analytics or Ris instead)
+  NEVER    dev tools used inside the project's own pipeline (→ Process)
+
+RIS — assign ONLY when a specific scientific/research domain is the subject:
+  ASSIGN   astropy (astronomy), biopython (biology), rdkit (chemistry), qiskit (quantum)
+  NEVER    generic data tools with no domain focus
+  NEVER    infer Ris from "data" or "analytics" in the project title alone
+"""
+
+# ── System prompt builders ────────────────────────────────────────────────────────
+def make_system(with_desc: bool, with_sculpting: bool = False) -> str:
+    n_cats = 9
     role = (
         "You are an expert research software classifier. "
-        "Given title, language, and dependencies, assign 1+ categories from the 9 below. "
+        f"Given title, language, and dependencies, assign 1+ categories from the {n_cats} below. "
         "Assign ALL that apply — most projects receive 3–5 labels.\n\n"
     )
+    body = ""
     if with_desc:
-        return role + CATEGORY_DESCRIPTIONS + f"\nValid categories: {VALID_CATEGORIES}\n"
-    else:
-        return role + f"Valid categories: {VALID_CATEGORIES}\n"
+        body += CATEGORY_DESCRIPTIONS + "\n"
+    if with_sculpting:
+        body += SCULPTING_RULES + "\n"
+    return role + body + f"Valid categories: {VALID_CATEGORIES}\n"
 
-# ── Examples (all JSON braces escaped as {{ }}) ──────────────────────────────────
+# ── Examples (all JSON braces escaped as {{ }}) ───────────────────────────────────
+# Selection criteria (prompt engineering best practice):
+#   1. Label coverage  — every category appears in at least one example
+#   2. Language diversity — Python / R / C++ / C
+#   3. Contrastive pairs — explicit ABSENT label reasoning teaches boundaries
+#   4. Cardinality range — 2-to-8 labels represented
+#   5. Ground truth verified — every output matches CSV dependency_labels column
 
-# 0-shot: no examples
 EXAMPLES_0 = ""
 
-# 1-shot (1 example, no CoT)
-EXAMPLES_1_NO_COT = """\
+# ── 5-shot no-CoT (compact inline format) ────────────────────────────────────────
+# Verified JOSS IDs: 5742, 5662, 3290, 7302, 8504
+EXAMPLES_5_NO_COT = """\
 === EXAMPLES ===
 
 Example 1:
-  Title: emg3d: A multigrid solver for 3D electromagnetic diffusion | Language: Python
-  Dependencies: h5py, matplotlib, numba, numpy, pytest, scipy, xarray
-  Output: {{"categories": ["Modeling And Simulation", "Data Analytics", "Ris", "Software", "Process"]}}
-"""
-
-# 3-shot (3 examples, no CoT)
-EXAMPLES_3_NO_COT = """\
-=== EXAMPLES ===
-
-Example 1:
-  Title: emg3d: A multigrid solver for 3D electromagnetic diffusion | Language: Python
-  Dependencies: h5py, matplotlib, numba, numpy, pytest, scipy, xarray
-  Output: {{"categories": ["Modeling And Simulation", "Data Analytics", "Ris", "Software", "Process"]}}
+  Title: measr: Bayesian psychometric measurement using Stan | Language: R
+  Dependencies: StanHeaders, rstan, dplyr, tidyr, Rcpp, testthat, knitr, rmarkdown
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Modeling And Simulation", "Process", "Ris", "Software", "Ui"]}}
 
 Example 2:
-  Title: measr: Bayesian psychometric measurement using Stan | Language: R
-  Dependencies: StanHeaders, rstan, dplyr, tidyr, ggplot2, Rcpp, testthat, knitr, shiny
-  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Ris", "Software", "Ui", "Process"]}}
+  Title: PYDAQ: Data Acquisition and Experimental Analysis with Python | Language: Python
+  Dependencies: PySide6, nidaqmx, pyserial, matplotlib, numpy
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Ui"]}}
 
 Example 3:
-  Title: PyDriller: Python Framework for Mining Software Repositories | Language: Python
-  Dependencies: gitpython, lizard, pytest, sphinx, click
-  Output: {{"categories": ["Software Analytics", "Software", "Process"]}}
-"""
-
-# 5-shot (5 examples, no CoT)
-EXAMPLES_5_NO_COT = EXAMPLES_3_NO_COT + """\
-Example 4:
   Title: covidregionaldata: Subnational data for COVID-19 epidemiology | Language: R
-  Dependencies: dplyr, ggplot2, httr, knitr, lubridate, rmarkdown, sf, tidyr, testthat
-  Output: {{"categories": ["Data Analytics", "Ris", "Software", "Ui", "Process"]}}
+  Dependencies: dplyr, ggplot2, httr, knitr, lubridate, purrr, rmarkdown, sf, tidyr, testthat
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Process", "Ris", "Software"]}}
+
+Example 4:
+  Title: EXP: a Python/C++ package for basis function expansion methods in galactic dynamics | Language: C++
+  Dependencies: CUDAToolkit, Doxygen, Eigen3, HDF5, MPI, OpenMP, pybind11, VTK
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Software Analytics"]}}
 
 Example 5:
-  Title: BrightEyes-MCS: Control software for multichannel scanning microscopy | Language: Python
-  Dependencies: nifpga, PySide6, PyQtGraph, h5py, numpy, scipy, pytest
-  Output: {{"categories": ["Hardware", "Ris", "Software", "Ui"]}}
+  Title: PyBispectra: A toolbox for advanced electrophysiological signal processing | Language: Python
+  Dependencies: mne, scipy, numba, numpy, ipywidgets, pytest, sphinx, pre-commit, coverage
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
 """
 
-# 5-shot WITH chain-of-thought
+# ── 5-shot WITH CoT ───────────────────────────────────────────────────────────────
+# Verified JOSS IDs: 5742, 5662, 3290, 7302, 8504
+# Covers: all 9 categories | Languages: R x2, Python x2, C++ x1
+# Contrastive: Ex3 shows rmarkdown ≠ Ui; Ex4 shows CUDAToolkit = Hardware in C++;
+#              Ex2 shows no Process when <2 dev tools present
 EXAMPLES_5_COT = """\
 === EXAMPLES ===
 
-Example 1:
-  Title: emg3d: A multigrid solver for 3D electromagnetic diffusion | Language: Python
-  Dependencies: h5py, matplotlib, numba, numpy, pytest, scipy, xarray
-  Reasoning: solver+scipy→Modeling, numpy+xarray→Analytics, electromagnetic→Ris, library→Software, pytest+h5py→Process
-  Output: {{"categories": ["Modeling And Simulation", "Data Analytics", "Ris", "Software", "Process"]}}
+Example 1 (R, 7 labels — Bayesian stats; rmarkdown=Ui, testthat+knitr=Process, rstan=Modeling):
+  Title: measr: Bayesian psychometric measurement using Stan
+  Language: R
+  Dependencies: StanHeaders, rstan, dplyr, tidyr, Rcpp, testthat, knitr, rmarkdown
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Modeling And Simulation", "Process", "Ris", "Software", "Ui"]}}
+  Reasoning: rstan and StanHeaders signal Modeling And Simulation. dplyr and tidyr signal Data Analytics. The package integrates psychometric and measurement data from multiple sources so Integrative Analysis applies. The psychometric measurement domain signals Ris. Rcpp signals Software. rmarkdown provides interactive report rendering so Ui applies. testthat and knitr together (2+ tools) signal Process.
 
-Example 2:
-  Title: measr: Bayesian psychometric measurement using Stan | Language: R
-  Dependencies: StanHeaders, rstan, dplyr, tidyr, ggplot2, Rcpp, testthat, knitr, shiny
-  Reasoning: rstan+StanHeaders→Modeling, dplyr+ggplot2→Analytics, psychometric→Ris, Rcpp→Software, shiny→Ui, testthat+knitr→Process
-  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Ris", "Software", "Ui", "Process"]}}
+Example 2 (Python, 6 labels — physical instrument control; NO Process because <2 dev tools):
+  Title: PYDAQ: Data Acquisition and Experimental Analysis with Python
+  Language: Python
+  Dependencies: PySide6, nidaqmx, pyserial, matplotlib, numpy, packaging, shiboken6
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Ui"]}}
+  Reasoning: nidaqmx and pyserial signal Hardware because they interface with physical data acquisition instruments. PySide6 signals Ui. Physical measurement and system identification signals Modeling And Simulation and Ris. matplotlib and numpy signal Data Analytics. The project is a reusable library so Software applies. No dev/build/test tools are listed so Process does not qualify.
 
-Example 3:
-  Title: PyDriller: Python Framework for Mining Software Repositories | Language: Python
-  Dependencies: gitpython, lizard, pytest, sphinx, click
-  Reasoning: gitpython+lizard→Software Analytics (purpose=analyse code), library→Software, pytest+sphinx→Process
-  Output: {{"categories": ["Software Analytics", "Software", "Process"]}}
+Example 3 (R, 5 labels — epidemiology data package; rmarkdown = static reporting NOT interactive Ui):
+  Title: covidregionaldata: Subnational data for COVID-19 epidemiology
+  Language: R
+  Dependencies: dplyr, ggplot2, httr, knitr, lubridate, purrr, rmarkdown, sf, tidyr, testthat
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Process", "Ris", "Software"]}}
+  Reasoning: dplyr and tidyr signal Data Analytics. The package integrates subnational COVID-19 data from multiple heterogeneous sources so Integrative Analysis applies. COVID-19 epidemiology is a specific scientific domain so Ris applies. The project is a reusable package so Software applies. testthat and knitr together (2+ tools) signal Process. rmarkdown is used for static reports only, not an interactive user-facing interface, so Ui does not apply.
 
-Example 4:
-  Title: covidregionaldata: Subnational data for COVID-19 epidemiology | Language: R
-  Dependencies: dplyr, ggplot2, httr, knitr, lubridate, rmarkdown, sf, tidyr, testthat
-  Reasoning: dplyr+tidyr→Analytics, COVID domain→Ris, package→Software, knitr+rmarkdown→Ui, testthat+knitr→Process
-  Output: {{"categories": ["Data Analytics", "Ris", "Software", "Ui", "Process"]}}
+Example 4 (C++, 6 labels — GPU device programming; CUDAToolkit = Hardware; Doxygen alone ≠ Process):
+  Title: EXP: a Python/C++ package for basis function expansion methods in galactic dynamics
+  Language: C++
+  Dependencies: CUDAToolkit, Doxygen, Eigen3, HDF5, MPI, OpenMP, pybind11, VTK
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Software Analytics"]}}
+  Reasoning: CUDAToolkit signals Hardware because the C++ code directly programs GPU devices at low level, unlike high-level ML frameworks. N-body galactic simulations signal Modeling And Simulation. Galactic dynamics is a specific scientific domain so Ris applies. pybind11 signals Software. VTK and the analysis pipeline signal Software Analytics. HDF5 and numpy signal Data Analytics. Doxygen alone is only one documentation tool so Process does not qualify.
 
-Example 5:
-  Title: BrightEyes-MCS: Control software for multichannel scanning microscopy | Language: Python
-  Dependencies: nifpga, PySide6, PyQtGraph, h5py, numpy, scipy, pytest
-  Reasoning: nifpga→Hardware (FPGA device), microscopy→Ris, PySide6→Ui, reusable→Software, only 1 dev tool→no Process
-  Output: {{"categories": ["Hardware", "Ris", "Software", "Ui"]}}
+Example 5 (Python, 7 labels — neuroscience signal toolbox; 4 dev tools = Process):
+  Title: PyBispectra: A toolbox for advanced electrophysiological signal processing using the bispectrum
+  Language: Python
+  Dependencies: mne, scipy, numba, numpy, ipywidgets, pytest, sphinx, pre-commit, coverage
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
+  Reasoning: mne signals Ris because it is a domain-specific neuroscience library. scipy and numba signal Modeling And Simulation for spectral analysis. ipywidgets signals Ui for interactive notebooks. pytest, sphinx, pre-commit, and coverage together (4 tools) signal Process. numpy and scipy signal Data Analytics. The toolbox analyses electrophysiological signal data so Software Analytics applies. The project is a reusable library so Software applies.
+
+Example 6 (Python, 7 labels — agent-based simulation; solara+ipyvuetify = Ui; scipy+networkx = M&S):
+  Title: Mesa 3: Agent-based modeling with Python in 2025
+  Language: Python
+  Dependencies: networkx, scipy, numpy, matplotlib, pytest, sphinx, coverage, solara, ipyvue, ipyvuetify
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
+  Reasoning: Mesa is the canonical agent-based modeling framework so Modeling And Simulation applies. scipy and networkx signal Data Analytics. solara, ipyvue, and ipyvuetify provide an interactive user-facing visualization interface so Ui applies. The project is a reusable library so Software applies. Complex systems research signals Ris. pytest, sphinx, and coverage together (3 tools) signal Process. The framework includes analysis tools for simulation outputs so Software Analytics applies.
+
+Example 7 (R, 4 labels — political event data API; rmarkdown present but NO Ui, NO Process):
+  Title: UTDEventData: An R package to access political event data
+  Language: R
+  Dependencies: countrycode, curl, jsonlite, knitr, methods, rjson, rmarkdown, stats
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Ris", "Software"]}}
+  Reasoning: jsonlite and countrycode signal Data Analytics. The package retrieves and aggregates political event data from a remote API across multiple sources so Integrative Analysis applies. Political science data infrastructure is a specific research domain so Ris applies. The project is a reusable R package so Software applies. knitr and rmarkdown are used only for static documentation, not an interactive interface, so Ui does not apply. No test tools are present so Process does not qualify.
 """
 
-# 7-shot WITH CoT — must match production prompts.py FEW_SHOT_EXAMPLES exactly
+# ── 7-shot WITH CoT ───────────────────────────────────────────────────────────────
+# Extends 5-shot by adding:
+#   Ex6 (Python): mesa — agent-based Modeling, Ui via solara, covers M&S clearly
+#   Ex7 (R): daiquiri — strong Integrative Analysis, Software Analytics in R
+# Verified JOSS IDs: 5742, 5662, 3290, 7302, 8504, 7668, 5034
+# Languages: R x3, Python x3, C++ x1 | Cardinality: 5, 6, 7, 6, 7, 7, 8
 EXAMPLES_7_COT = """\
 === EXAMPLES ===
 
-Example 1 (R, 6 labels — covers Ui via shiny, Process via testthat+knitr):
+Example 1 (R, 7 labels — Bayesian stats; rmarkdown=Ui, testthat+knitr=Process, rstan=Modeling):
   Title: measr: Bayesian psychometric measurement using Stan
   Language: R
-  Dependencies: StanHeaders, rstan, dplyr, tidyr, ggplot2, Rcpp, testthat, knitr, shiny
-  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Ris", "Software", "Ui", "Process"]}}
-  Reasoning: rstan+StanHeaders→Modeling, dplyr+ggplot2→Analytics, psychometric→Ris, Rcpp→Software, shiny→Ui, testthat+knitr→Process
+  Dependencies: StanHeaders, rstan, dplyr, tidyr, Rcpp, testthat, knitr, rmarkdown
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Modeling And Simulation", "Process", "Ris", "Software", "Ui"]}}
+  Reasoning: rstan and StanHeaders signal Modeling And Simulation. dplyr and tidyr signal Data Analytics. The package integrates psychometric and measurement data from multiple sources so Integrative Analysis applies. The psychometric measurement domain signals Ris. Rcpp signals Software. rmarkdown provides interactive report rendering so Ui applies. testthat and knitr together (2+ tools) signal Process.
 
-Example 2 (Python, 4 labels — covers Hardware via nifpga):
-  Title: BrightEyes-MCS: Control software for multichannel scanning microscopy
+Example 2 (Python, 6 labels — physical instrument control; NO Process because <2 dev tools):
+  Title: PYDAQ: Data Acquisition and Experimental Analysis with Python
   Language: Python
-  Dependencies: nifpga, PySide6, PyQtGraph, h5py, numpy, scipy, pytest
-  Output: {{"categories": ["Hardware", "Ris", "Software", "Ui"]}}
-  Reasoning: nifpga→Hardware, microscopy→Ris, PySide6→Ui, reusable package→Software. Only 1 dev tool (pytest), so no Process.
+  Dependencies: PySide6, nidaqmx, pyserial, matplotlib, numpy, packaging, shiboken6
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Ui"]}}
+  Reasoning: nidaqmx and pyserial signal Hardware because they interface with physical data acquisition instruments. PySide6 signals Ui. Physical measurement and system identification signals Modeling And Simulation and Ris. matplotlib and numpy signal Data Analytics. The project is a reusable library so Software applies. No dev/build/test tools are listed so Process does not qualify.
 
-Example 3 (Python, 3 labels — covers Software Analytics):
-  Title: PyDriller: Python Framework for Mining Software Repositories
-  Language: Python
-  Dependencies: gitpython, lizard, pytest, sphinx, click
-  Output: {{"categories": ["Software Analytics", "Software", "Process"]}}
-  Reasoning: Mining Software Repositories+gitpython+lizard→Software Analytics, library→Software, pytest+sphinx→Process
-
-Example 4 (Python, 5 labels — covers Integrative Analysis):
-  Title: Jupyter Scatter: Interactive Exploration of Large-Scale Datasets
-  Language: Python
-  Dependencies: anywidget, numpy, pandas, scikit-learn, pytest, sphinx
-  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Software", "Ui", "Process"]}}
-  Reasoning: pandas+sklearn→Analytics, interactive widget for multi-source exploration→Integrative Analysis+Ui, library→Software, pytest+sphinx→Process
-
-Example 5 (Python, 5 labels — standard scientific Python package):
-  Title: emg3d: A multigrid solver for 3D electromagnetic diffusion
-  Language: Python
-  Dependencies: h5py, matplotlib, numba, numpy, pytest, scipy, xarray
-  Output: {{"categories": ["Modeling And Simulation", "Data Analytics", "Ris", "Software", "Process"]}}
-  Reasoning: solver+scipy→Modeling, numpy+xarray→Analytics, electromagnetic→Ris, library→Software, pytest+h5py→Process
-
-Example 6 (R, 5 labels — typical R data package):
+Example 3 (R, 5 labels — epidemiology data package; rmarkdown = static reporting NOT interactive Ui):
   Title: covidregionaldata: Subnational data for COVID-19 epidemiology
   Language: R
-  Dependencies: dplyr, ggplot2, httr, jsonlite, knitr, lubridate, memoise, purrr, rlang, rmarkdown, sf, tidyr, testthat
-  Output: {{"categories": ["Data Analytics", "Ris", "Software", "Ui", "Process"]}}
-  Reasoning: dplyr+tidyr→Analytics, COVID epidemiology→Ris, package→Software, knitr+rmarkdown→Ui, testthat+knitr→Process
+  Dependencies: dplyr, ggplot2, httr, knitr, lubridate, purrr, rmarkdown, sf, tidyr, testthat
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Process", "Ris", "Software"]}}
+  Reasoning: dplyr and tidyr signal Data Analytics. The package integrates subnational COVID-19 data from multiple heterogeneous sources so Integrative Analysis applies. COVID-19 epidemiology is a specific scientific domain so Ris applies. The project is a reusable package so Software applies. testthat and knitr together (2+ tools) signal Process. rmarkdown is used for static reports only, not an interactive user-facing interface, so Ui does not apply.
 
-Example 7 (C++, 4 labels — HPC simulation without Hardware):
-  Title: Cabana: A Performance Portable Library for Particle-Based Simulations
+Example 4 (C++, 6 labels — GPU device programming; CUDAToolkit = Hardware; Doxygen alone ≠ Process):
+  Title: EXP: a Python/C++ package for basis function expansion methods in galactic dynamics
   Language: C++
-  Dependencies: Kokkos, HDF5, GTest, Doxygen, cmake
-  Output: {{"categories": ["Modeling And Simulation", "Ris", "Software", "Process"]}}
-  Reasoning: Particle simulations+Kokkos→Modeling, physics domain→Ris, library→Software, GTest+cmake+Doxygen→Process. No hardware interfacing despite HPC.
+  Dependencies: CUDAToolkit, Doxygen, Eigen3, HDF5, MPI, OpenMP, pybind11, VTK
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software", "Software Analytics"]}}
+  Reasoning: CUDAToolkit signals Hardware because the C++ code directly programs GPU devices at low level, unlike high-level ML frameworks. N-body galactic simulations signal Modeling And Simulation. Galactic dynamics is a specific scientific domain so Ris applies. pybind11 signals Software. VTK and the analysis pipeline signal Software Analytics. HDF5 and numpy signal Data Analytics. Doxygen alone is only one documentation tool so Process does not qualify.
+
+Example 5 (Python, 7 labels — neuroscience signal toolbox; 4 dev tools = Process):
+  Title: PyBispectra: A toolbox for advanced electrophysiological signal processing using the bispectrum
+  Language: Python
+  Dependencies: mne, scipy, numba, numpy, ipywidgets, pytest, sphinx, pre-commit, coverage
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
+  Reasoning: mne signals Ris because it is a domain-specific neuroscience library. scipy and numba signal Modeling And Simulation for spectral analysis. ipywidgets signals Ui for interactive notebooks. pytest, sphinx, pre-commit, and coverage together (4 tools) signal Process. numpy and scipy signal Data Analytics. The toolbox analyses electrophysiological signal data so Software Analytics applies. The project is a reusable library so Software applies.
+
+Example 6 (Python, 7 labels — agent-based simulation; solara+ipyvuetify = Ui; scipy+networkx = M&S):
+  Title: Mesa 3: Agent-based modeling with Python in 2025
+  Language: Python
+  Dependencies: networkx, scipy, numpy, matplotlib, pytest, sphinx, coverage, solara, ipyvue, ipyvuetify
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
+  Reasoning: Mesa is the canonical agent-based modeling framework so Modeling And Simulation applies. scipy and networkx signal Data Analytics. solara, ipyvue, and ipyvuetify provide an interactive user-facing visualization interface so Ui applies. The project is a reusable library so Software applies. Complex systems research signals Ris. pytest, sphinx, and coverage together (3 tools) signal Process. The framework includes analysis tools for simulation outputs so Software Analytics applies.
+
+Example 7 (R, 4 labels — political event data API; rmarkdown present but NO Ui, NO Process):
+  Title: UTDEventData: An R package to access political event data
+  Language: R
+  Dependencies: countrycode, curl, jsonlite, knitr, methods, rjson, rmarkdown, stats
+  Output: {{"categories": ["Data Analytics", "Integrative Analysis", "Ris", "Software"]}}
+  Reasoning: jsonlite and countrycode signal Data Analytics. The package retrieves and aggregates political event data from a remote API across multiple sources so Integrative Analysis applies. Political science data infrastructure is a specific research domain so Ris applies. The project is a reusable R package so Software applies. knitr and rmarkdown are used only for static documentation, not an interactive interface, so Ui does not apply. No test tools are present so Process does not qualify.
 """
 
-# Derive 5-shot CoT from first 5 examples of EXAMPLES_7_COT
-EXAMPLES_5_COT = "\n".join(
-    EXAMPLES_7_COT.split("\n\n")[:6]  # header + 5 examples
-) + "\n"
+# ── 10-shot WITH CoT ─────────────────────────────────────────────────────────────
+# Extends 7-shot with 3 more contrastive examples:
+#   Ex8 (C): MPTRAC — C language, GPU via cudart=Hardware, atmospheric science=Ris
+#   Ex9 (Python): actisleep-tracker — pure dashboard, 5 dev tools=Process, Ui via dash
+#   Ex10 (Python): Jupyter Scatter — interactive widget; SA from analysis pipeline; NO Integrative Analysis
+# Verified JOSS IDs: 5742, 5662, 3290, 7302, 8504, 7668, 5034, 8177, 8181, 7059
+EXAMPLES_10_COT = EXAMPLES_7_COT + """\
+Example 8 (C, 6 labels — atmospheric dispersion model; cudart+curand = Hardware in C):
+  Title: MPTRAC: A high-performance Lagrangian transport model for atmospheric air parcel dispersion
+  Language: C
+  Dependencies: cudart, curand, hdf5, hdf5_hl, netcdf, gsl, gslcblas, sz, zstd
+  Reasoning: cudart and curand signal Hardware because they are CUDA device runtime libraries for direct GPU programming in C. Lagrangian particle transport modelling signals Modeling And Simulation. Atmospheric science is a specific scientific domain so Ris applies. hdf5 and netcdf signal Data Analytics. The project is a reusable model library so Software applies. No dev/test/docs tools present so Process does not apply.
+  Output: {{"categories": ["Data Analytics", "Hardware", "Modeling And Simulation", "Ris", "Software"]}}
 
-EXAMPLES_5_COT_NO_DESC = EXAMPLES_5_COT  # same examples, system differs
+Example 9 (Python, 7 labels — actigraphy dashboard; 5 dev tools = strong Process; dash = Ui):
+  Title: ActiSleep Tracker: a Python-based dashboard for adjusting automatic sleep predictions of actigraphy data
+  Language: Python
+  Dependencies: dash, pandas, plotly, numpy, xarray, pre-commit, pytest, coverage, mypy, ruff
+  Reasoning: pandas and xarray signal Data Analytics. Actigraphy and sleep research is a specific scientific domain so Ris applies. The project uses machine learning for sleep predictions so Modeling And Simulation applies. dash and plotly provide an interactive user-facing dashboard so Ui applies. The project is a reusable package so Software applies. pre-commit, pytest, coverage, mypy, and ruff together (5 tools) signal Process. The dashboard analyses data pipeline quality so Software Analytics applies.
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Ris", "Software", "Software Analytics", "Ui"]}}
 
-# 5-shot, same examples as v7, NO CoT reasoning lines — clean CoT ablation partner for v7
+Example 10 (Python, 6 labels — interactive scatter plot widget; anywidget = Ui; NO Ris, NO Integrative Analysis):
+  Title: Jupyter Scatter: Interactive Exploration of Large-Scale Datasets
+  Language: Python
+  Dependencies: anywidget, pandas, scikit-learn, numpy, pytest, pre-commit, ruff, scipy, hdbscan
+  Reasoning: pandas and scikit-learn signal Data Analytics. hdbscan and scipy signal Modeling And Simulation for clustering and spatial analysis. anywidget provides an interactive Jupyter scatter plot interface so Ui applies. pytest and pre-commit together (2+ tools) signal Process. The project is a reusable widget library so Software applies. The exploration pipeline analyses dataset characteristics so Software Analytics applies. No domain-specific scientific library (e.g. astropy, biopython, rdkit) is present so Ris does NOT apply. This project operates on a SINGLE dataset type, not multiple heterogeneous sources, so Integrative Analysis does NOT apply.
+  Output: {{"categories": ["Data Analytics", "Modeling And Simulation", "Process", "Software", "Software Analytics", "Ui"]}}
+"""
+
+# ── Strip Reasoning lines for no-CoT ablation variants ───────────────────────────
 def _strip_reasoning(examples_str: str) -> str:
-    """Remove 'Reasoning: ...' lines from CoT examples."""
+    """Remove 'Reasoning: ...' lines to produce no-CoT variants."""
     lines = [l for l in examples_str.splitlines() if not l.strip().startswith("Reasoning:")]
     return "\n".join(lines) + "\n"
 
-EXAMPLES_5_COT_NO_REASONING = _strip_reasoning(EXAMPLES_5_COT)
-EXAMPLES_7_COT_NO_REASONING = _strip_reasoning(EXAMPLES_7_COT)
+EXAMPLES_5_NO_COT_R  = _strip_reasoning(EXAMPLES_5_COT)   # 5-shot, no CoT
+EXAMPLES_7_NO_COT_R  = _strip_reasoning(EXAMPLES_7_COT)   # 7-shot, no CoT
+EXAMPLES_10_NO_COT_R = _strip_reasoning(EXAMPLES_10_COT)  # 10-shot, no CoT
 
-# 10-shot WITH CoT, no descriptions — extends EXAMPLES_7_COT with 3 more
-EXAMPLES_10_COT = EXAMPLES_7_COT + """\
-Example 8 (Python, 4 labels — covers Data Analytics + Ui via dashboard):
-  Title: Lumen: A framework for building data-driven dashboards
-  Language: Python
-  Dependencies: panel, param, pandas, bokeh, pytest, sphinx
-  Output: {{"categories": ["Data Analytics", "Software", "Ui", "Process"]}}
-  Reasoning: pandas→Analytics, panel+bokeh→Ui (interactive dashboard), reusable framework→Software, pytest+sphinx→Process. No domain signal→no Ris.
-
-Example 9 (Python, 3 labels — covers Process-heavy dev tool):
-  Title: pytest-benchmark: A pytest fixture for benchmarking code
-  Language: Python
-  Dependencies: pytest, setuptools, sphinx, coverage, tox
-  Output: {{"categories": ["Software", "Process"]}}
-  Reasoning: Benchmarking tool for developers→Process, pytest+tox+coverage+sphinx→confirms Process, reusable plugin→Software. No data, no domain→nothing else.
-
-Example 10 (Julia, 5 labels — HPC with Integrative Analysis):
-  Title: AMDGPU.jl: AMD GPU programming in Julia
-  Language: Julia
-  Dependencies: LLVM, Documenter, Test, LinearAlgebra, Statistics
-  Output: {{"categories": ["Hardware", "Software", "Process"]}}
-  Reasoning: GPU programming→Hardware (device interfacing), reusable library→Software, Test+Documenter→Process. LinearAlgebra is stdlib not domain signal→no Ris.
-"""
-
-# ── Output format ────────────────────────────────────────────────────────────────
+# ── Output format ─────────────────────────────────────────────────────────────────
 OUTPUT_FORMAT = 'Return ONLY valid JSON: {{"categories": ["Cat1", "Cat2", ...]}}'
 
-# ── User template — {title}, {language}, {dependencies} are filled at runtime ───
+# ── User template — {title}, {language}, {dependencies} are filled at runtime ────
 # {examples} and {output_format} are filled when building VARIANTS
 USER_TEMPLATE = """{examples}
 === CLASSIFY THIS SOFTWARE ===
@@ -257,85 +320,125 @@ Dependencies: [{{dependencies}}]
 {output_format}
 """
 
-# ── Variant definitions ──────────────────────────────────────────────────────────
+# ── Variant definitions ───────────────────────────────────────────────────────────
+#
+# REDUCED GRID: 16 variants (was 28)
+# Rationale: isolate one axis at a time; 7-shot is the production zone.
+#
+#   Axis A — Shot count   : 0-shot, 5-shot, 7-shot, 10-shot   (fixed: CoT+desc, no sculpting)
+#   Axis B — CoT          : no / yes                           (fixed: 7-shot, desc, no sculpting)
+#   Axis C — Descriptions : no / yes                           (fixed: 7-shot, CoT, no sculpting)
+#   Axis D — Sculpting    : no / yes                           (fixed: 7-shot, CoT+desc)
+#             + two extra sculpting checkpoints at 5-shot & 10-shot
+#
 VARIANTS = [
-    {
-        "name": "v0_zero_no_desc",
-        "description": "0-shot, no category descriptions",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_0, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v1_zero_with_desc",
-        "description": "0-shot, with category descriptions",
-        "system_prompt": make_system(with_desc=True),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_0, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v2_one_shot_no_cot",
-        "description": "1-shot, no chain-of-thought, with descriptions",
-        "system_prompt": make_system(with_desc=True),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_1_NO_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v4_five_shot_no_cot",
-        "description": "5-shot, no chain-of-thought, with descriptions",
-        "system_prompt": make_system(with_desc=True),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_NO_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v5_five_shot_cot",
-        "description": "5-shot, with chain-of-thought, with descriptions",
-        "system_prompt": make_system(with_desc=True),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v6_seven_shot_cot",
-        "description": "7-shot, with chain-of-thought, with descriptions (production prompt)",
-        "system_prompt": make_system(with_desc=True),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v7_nodesc_five_shot_cot",
-        "description": "5-shot, with chain-of-thought, NO descriptions",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_COT_NO_DESC, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v8_ten_shot_cot_no_desc",
-        "description": "10-shot, with chain-of-thought, NO descriptions — extends v7",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_10_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v9_seven_shot_cot_no_desc",
-        "description": "7-shot, with chain-of-thought, NO descriptions — clean comparison to v6",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v10_five_shot_no_cot_no_desc",
-        "description": "5-shot, NO chain-of-thought, NO descriptions — clean CoT ablation vs v7 (same examples)",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_COT_NO_REASONING, output_format=OUTPUT_FORMAT),
-    },
-    {
-        "name": "v11_seven_shot_no_cot_no_desc",
-        "description": "7-shot, NO chain-of-thought, NO descriptions — clean CoT ablation vs v9 (same examples)",
-        "system_prompt": make_system(with_desc=False),
-        "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT_NO_REASONING, output_format=OUTPUT_FORMAT),
-    },
+    # ── Axis A: Shot-count ablation (CoT+desc, no sculpting) ────────────────────
+    {"name": "v00_zero_cot_desc",         "description": "0-shot  | CoT | desc | no sculpting  — baseline",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_0,         output_format=OUTPUT_FORMAT)},
+
+    {"name": "v01_five_cot_desc",         "description": "5-shot  | CoT | desc | no sculpting",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_COT,     output_format=OUTPUT_FORMAT)},
+
+    {"name": "v02_seven_cot_desc",        "description": "7-shot  | CoT | desc | no sculpting  ← production",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT,     output_format=OUTPUT_FORMAT)},
+
+    {"name": "v03_ten_cot_desc",          "description": "10-shot | CoT | desc | no sculpting",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_10_COT,    output_format=OUTPUT_FORMAT)},
+
+    # ── Axis B: CoT ablation (7-shot, desc, no sculpting) ───────────────────────
+    {"name": "v04_seven_no_cot_no_desc",  "description": "7-shot  | no CoT | no desc | no sculpting",
+     "system_prompt": make_system(False, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    {"name": "v05_seven_no_cot_desc",     "description": "7-shot  | no CoT | desc    | no sculpting",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    {"name": "v06_seven_cot_no_desc",     "description": "7-shot  | CoT    | no desc | no sculpting",
+     "system_prompt": make_system(False, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT,      output_format=OUTPUT_FORMAT)},
+    # v02 already covers 7-shot CoT+desc (no sculpting)
+
+    # ── Axis C: 5-shot no-CoT variants (compare with v01) ───────────────────────
+    {"name": "v07_five_no_cot_no_desc",   "description": "5-shot  | no CoT | no desc | no sculpting",
+     "system_prompt": make_system(False, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    {"name": "v08_five_no_cot_desc",      "description": "5-shot  | no CoT | desc    | no sculpting",
+     "system_prompt": make_system(True, False),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    # ── Axis D: Sculpting ablation (fixed: CoT+desc, vs no sculpting) ───────────
+    # 5-shot sculpting checkpoint
+    {"name": "v09sc_five_cot_desc",       "description": "5-shot  | CoT | desc | sculpting",
+     "system_prompt": make_system(True, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_5_COT,      output_format=OUTPUT_FORMAT)},
+
+    # 7-shot sculpting — main comparison pair with v02
+    {"name": "v10sc_seven_no_cot_no_desc","description": "7-shot  | no CoT | no desc | sculpting",
+     "system_prompt": make_system(False, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    {"name": "v11sc_seven_no_cot_desc",   "description": "7-shot  | no CoT | desc    | sculpting",
+     "system_prompt": make_system(True, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_NO_COT_R, output_format=OUTPUT_FORMAT)},
+
+    {"name": "v12sc_seven_cot_no_desc",   "description": "7-shot  | CoT    | no desc | sculpting",
+     "system_prompt": make_system(False, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT,      output_format=OUTPUT_FORMAT)},
+
+    {"name": "v13sc_seven_cot_desc",      "description": "7-shot  | CoT    | desc    | sculpting  ← sculpted production",
+     "system_prompt": make_system(True, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_7_COT,      output_format=OUTPUT_FORMAT)},
+
+    # 10-shot sculpting checkpoint
+    {"name": "v14sc_ten_cot_desc",        "description": "10-shot | CoT | desc | sculpting",
+     "system_prompt": make_system(True, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_10_COT,     output_format=OUTPUT_FORMAT)},
+
+    # 0-shot sculpting baseline
+    {"name": "v15sc_zero_cot_desc",       "description": "0-shot  | CoT | desc | sculpting  — sculpting baseline",
+     "system_prompt": make_system(True, True),
+     "user_template": USER_TEMPLATE.format(examples=EXAMPLES_0,          output_format=OUTPUT_FORMAT)},
 ]
 
 VARIANT_MAP = {v["name"]: v for v in VARIANTS}
 
+# ── Head-to-head sculpting pairs (for focused analysis) ──────────────────────────
+SCULPTING_PAIRS = [
+    ("v02_seven_cot_desc",     "v13sc_seven_cot_desc"),    # ← flagship comparison
+    ("v06_seven_cot_no_desc",  "v12sc_seven_cot_no_desc"),
+    ("v05_seven_no_cot_desc",  "v11sc_seven_no_cot_desc"),
+    ("v03_ten_cot_desc",       "v14sc_ten_cot_desc"),
+]
+
+SCULPTING_VARIANTS = [v for v in VARIANTS if v["name"].endswith("_sc") or "sc_" in v["name"]]
+BASE_VARIANTS      = [v for v in VARIANTS if v not in SCULPTING_VARIANTS]
+
+# ─────────────────────────────────────────────────────────────────────────────────
+
 if __name__ == "__main__":
-    # Quick sanity check — try formatting each template
     test = {"title": "Test", "language": "Python", "dependencies": "numpy, scipy"}
-    print("Sanity check — all variants format without error:\n")
+    print(f"{'Ablation grid — focused 16-variant design':─<70}")
+    print(f"\n  Total variants : {len(VARIANTS)}")
+    print(f"  Base (no sculpting) : {len(BASE_VARIANTS)}")
+    print(f"  With sculpting      : {len(SCULPTING_VARIANTS)}")
+    print(f"  Est. LLM calls      : {len(VARIANTS)} × ~461 = ~{len(VARIANTS)*461:,}\n")
+    print(f"  {'Name':<42} {'OK':<4} Description")
+    print("─" * 105)
     for v in VARIANTS:
         try:
-            msg = v["user_template"].format(**test)
-            print(f"  ✅ {v['name']:<35} ({v['description']})")
+            v["user_template"].format(**test)
+            status = "✅"
         except KeyError as e:
-            print(f"  ❌ {v['name']:<35} KeyError: {e}")
+            status = f"❌ {e}"
+        sc = " [SC]" if "sc" in v["name"] else ""
+        print(f"  {v['name']:<42} {status:<4} {v['description']}{sc}")
+
+    print(f"\nScuplting pairs (no-sc → sc):")
+    for a, b in SCULPTING_PAIRS:
+        print(f"  {a:<38} → {b}")

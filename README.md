@@ -18,40 +18,43 @@ Classifies JOSS research software repositories into 9 categories using an LLM (O
 
 ## How to Run
 
-### Step 1: Copy code to server
+### Option 1: Running on Google Colab (Recommended for GPU Access)
 
-```powershell
-scp -r c:\Users\eggoni\Desktop\llm\* coder.LLMtune:/home/coder/llm/
-```
+1. Upload the project folder (`src/`, `scripts/`, `datasets/`, `requirements.txt`) to your Google Drive.
+2. Open a Jupyter notebook in Google Colab and change the runtime to a **GPU runtime** (e.g., T4, L4, or A100).
+3. Mount Google Drive:
+   ```python
+   from google.colab import drive
+   drive.mount('/content/drive')
+   ```
+4. Navigate to the project directory and install dependencies:
+   ```bash
+   %cd /content/drive/MyDrive/llm
+   !pip install -r requirements.txt
+   ```
+5. Run the classification script:
+   ```bash
+   # Quick test (5 projects only)
+   !python scripts/classify_projects.py --model llama3.3:70b --limit 5 --verbose
+   
+   # Full run
+   !python scripts/classify_projects.py --model llama3.3:70b --verbose
+   ```
 
-### Step 2: Open VS Code remotely
+### Option 2: Running Locally or on a Custom Server
 
-```powershell
-code --remote ssh-remote+coder.LLMtune /home/coder/llm
-```
-
-### Step 3: Install dependencies (in remote terminal)
-
-```bash
-cd /home/coder/llm
-pip install -r requirements.txt
-```
-
-### Step 4: Test connection
-
-```bash
-python diagnose_timeout.py
-```
-
-### Step 5: Run classification
-
-```bash
-# Quick test (5 projects only)
-python classify_projects.py --model llama3.3:70b --limit 5 --verbose
-
-# Full run (30% eval + 70% inference)
-python classify_projects.py --model llama3.3:70b --verbose
-```
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Test Ollama API server connection:
+   ```bash
+   python scripts/diagnose_timeout.py
+   ```
+3. Run classification:
+   ```bash
+   python scripts/classify_projects.py --model llama3.3:70b --limit 5 --verbose
+   ```
 
 ## Expected Output
 
@@ -103,15 +106,28 @@ Step 3: Evaluation Metrics (330 projects)
 ## Project Structure
 
 ```
-├── classify_projects.py    # Main pipeline (30/70 split, eval + inference)
-├── config.py               # Host, model, paths, 9 categories
-├── prompts.py              # LLM prompts and category definitions
-├── categories.py           # Category metadata
-├── metrics.py              # Evaluation: precision, recall, F1, hamming, exact match per label
-├── utils.py                # Connection checking
-├── data/                   # Data loading utilities
-├── classifiers/            # Ollama classifier (ollama.py, base.py)
+├── src/                    # Core Python package / module files
+│   ├── config.py           # Configuration parameters and category definitions
+│   ├── prompts.py          # LLM system and user prompt builders
+│   ├── categories.py       # Category constants metadata
+│   ├── metrics.py          # Performance metrics calculation (F1, Jaccard, etc.)
+│   ├── utils.py            # Diagnostic connection utilities
+│   ├── ground_truths.py    # Raw dependencies file loader
+│   ├── data/               # Project data loader package
+│   └── classifiers/        # Ollama API classifier package
+├── scripts/                # Execution, utility, and setup scripts
+│   ├── classify_projects.py
+│   ├── evaluate_all.py
+│   ├── compare_models.py
+│   └── ...
+├── datasets/               # Labeled and inference datasets (.csv)
+├── results/                # Output classification results (.csv)
+├── plots/                  # Graph outputs and comparisons (.png)
+├── logs/                   # System runtime logs (.log)
+├── prompt_experiments/     # Ablation study sub-experiments
+├── README.md
 └── requirements.txt
+```
 ```
 qwen3.5:122b, embeddinggemma:300m, deepseek-r1:70b, llama3.3:70b, llama3.1:8b, nomic-embed-text:latest, gemma3:1b, gemma3:27b
   Model: llama3.3:70b
@@ -141,20 +157,10 @@ qwen3.5:122b, embeddinggemma:300m, deepseek-r1:70b, llama3.3:70b, llama3.1:8b, n
     Hardware                     overall=  5.8%  eval=  5.9%  diff=0.1% ✅
     Integrative Analysis         overall=  2.8%  eval=  2.8%  diff=0.1% ✅
 
-    coder login https://coder.compute.isst.fraunhofer.de
-    coder config-ssh --yes
-    coder ssh LLMtune
-    cd /home/coder/llm
-    python diagnose_timeout.py
-    python classify_projects.py --model llama3.3:70b 
-
-    # Copy files to server
-scp -r c:\Users\eggoni\Desktop\llm\*.py coder.LLMtune:/home/coder/llm/
-scp -r c:\Users\eggoni\Desktop\llm\*.csv coder.LLMtune:/home/coder/llm/
-scp -r c:\Users\eggoni\Desktop\llm\*.txt coder.LLMtune:/home/coder/llm/
-scp -r c:\Users\eggoni\Desktop\llm\data coder.LLMtune:/home/coder/llm/
-scp -r c:\Users\eggoni\Desktop\llm\classifiers coder.LLMtune:/home/coder/llm/
-
-# Then on local PC
-scp -r coder.LLMtune:/home/coder/llm/prompt_experiments/results/ "C:\Users\eggoni\Desktop\llm\prompt_experiments\results\"
-scp -r coder.LLMtune:/home/coder/llm/prompt_experiments/plots/ "C:\Users\eggoni\Desktop\llm\prompt_experiments\plots\"
+    # Running on Google Colab:
+    # 1. Open Google Colab and configure GPU runtime.
+    # 2. Upload this directory (src/, scripts/, datasets/, requirements.txt) to Google Drive.
+    # 3. Mount Google Drive and run:
+    #    %cd /content/drive/MyDrive/llm
+    #    !pip install -r requirements.txt
+    #    !python scripts/classify_projects.py --model llama3.3:70b --limit 5 --verbose

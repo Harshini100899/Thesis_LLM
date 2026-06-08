@@ -11,10 +11,12 @@ Usage:
     python classify_projects.py --model llama3.3:70b --limit 5 --verbose
 """
 
-import argparse
-import ast
 import sys
 from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
+
+import argparse
+import ast
 from typing import List
 from collections import Counter
 import time
@@ -254,7 +256,7 @@ def main():
             eval_projects_subset = eval_projects
 
         eval_results = classify_batch(eval_projects_subset, classifier, verbose=args.verbose)
-        eval_csv = Path(f"test_results_{prefix}.csv")
+        eval_csv = Path(f"results/test_results_{prefix}.csv")
         save_results(eval_results, eval_csv)
         print(f"  Saved to {eval_csv}")
 
@@ -269,7 +271,7 @@ def main():
             preds = [r["predicted_categories"] for r in successful]
             gts = [r["ground_truth"] for r in successful]
             df = per_label_report_df(preds, gts)
-            perlabel_csv = f"per_label_metrics_30pct_{prefix}.csv"
+            perlabel_csv = f"results/per_label_metrics_30pct_{prefix}.csv"
             df.to_csv(perlabel_csv, index=False)
             print(f"  Saved: {perlabel_csv}")
     else:
@@ -304,9 +306,9 @@ def main():
             preds = [r["predicted_categories"] for r in rest_successful]
             gts = [r["ground_truth"] for r in rest_successful]
             df = per_label_report_df(preds, gts)
-            df.to_csv(f"per_label_metrics_70pct_{prefix}.csv", index=False)
-            print(f"  Saved: per_label_metrics_70pct_{prefix}.csv")
-        save_results(rest_results, Path(f"rest_results_{prefix}.csv"))
+            df.to_csv(f"results/per_label_metrics_70pct_{prefix}.csv", index=False)
+            print(f"  Saved: results/per_label_metrics_70pct_{prefix}.csv")
+        save_results(rest_results, Path(f"results/rest_results_{prefix}.csv"))
         print(f"\n  Done! 70% rest: {len(rest_results)} ({sum(1 for r in rest_results if r['success'])} success)")
         return
 
@@ -318,14 +320,14 @@ def main():
     evaluate_and_print(all_results, f"100% Labeled ({sum(1 for r in all_results if r['success'])} projects)")
 
     # Save all
-    save_results(all_results, Path(f"all_labeled_results_{prefix}.csv"))
+    save_results(all_results, Path(f"results/all_labeled_results_{prefix}.csv"))
     all_successful = [r for r in all_results if r["success"] and r["ground_truth"]]
     if all_successful:
         preds = [r["predicted_categories"] for r in all_successful]
         gts = [r["ground_truth"] for r in all_successful]
         df = per_label_report_df(preds, gts)
-        df.to_csv(f"per_label_metrics_all_{prefix}.csv", index=False)
-        print(f"  Saved: per_label_metrics_all_{prefix}.csv")
+        df.to_csv(f"results/per_label_metrics_all_{prefix}.csv", index=False)
+        print(f"  Saved: results/per_label_metrics_all_{prefix}.csv")
 
     # ── Summary ──
     print(f"\n{'='*60}")

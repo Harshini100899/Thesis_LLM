@@ -19,13 +19,14 @@ import sys
 import time
 from pathlib import Path
 from collections import Counter
+import os
 
 import numpy as np
 import pandas as pd
 
-# ── Resolve parent dir (llm/) so we can import from there ───────────────────────
+# ── Resolve parent dir (llm/src) so we can import from there ───────────────────
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "src"))
 
 from config import (
     CATEGORIES, DEFAULT_OLLAMA_HOST, DEFAULT_OLLAMA_MODEL,
@@ -110,6 +111,11 @@ def parse_categories_from_response(text: str) -> list:
 # ── Ollama call ─────────────────────────────────────────────────────────────────
 import requests
 
+def _auth_headers() -> dict:
+    """Return Authorization header if OLLAMA_API_KEY is set."""
+    key = os.environ.get("OLLAMA_API_KEY", "")
+    return {"Authorization": f"Bearer {key}"} if key else {}
+
 def call_ollama(host: str, model: str, system: str, user: str, temperature: float,
                 timeout: int = 600, retries: int = 3):
     url = f"{host}/api/chat"
@@ -125,7 +131,8 @@ def call_ollama(host: str, model: str, system: str, user: str, temperature: floa
     for attempt in range(1, retries + 1):
         t0 = time.time()
         try:
-            resp = requests.post(url, json=payload, timeout=timeout, stream=True)
+            resp = requests.post(url, json=payload, timeout=timeout, stream=True,
+                                 headers=_auth_headers())
             resp.raise_for_status()
             content = ""
             tokens = 0
@@ -270,7 +277,8 @@ def check_server_load(host: str, model: str) -> tuple:
     payload = {"model": model, "prompt": "Reply with one word: ready", "stream": False}
     t0 = time.time()
     try:
-        resp = requests.post(url, json=payload, timeout=120)
+        resp = requests.post(url, json=payload, timeout=120,
+                             headers=_auth_headers())
         elapsed = time.time() - t0
         if resp.status_code == 200:
             if elapsed < 15:
@@ -356,29 +364,28 @@ def main():
             args.temperature, args.verbose, args.limit, args.timeout,
         )
 
-    # ── Quick summary ──
-    print(f"\n{'='*80}")
-    print(f"  QUICK METRICS SUMMARY (Micro F1 / Macro F1 / Jaccard / Latency)")
-    print(f"{'='*80}")
-    print(f"  {'Variant':<35} {'N':>5} {'Micro F1':>9} {'Macro F1':>9} {'Jaccard':>9} {'Recall':>8} {'Avg Lat':>9} {'Med Lat':>9}")
+    # ── Quick summary — only show variants that have a result file ─────────────
+    print(f"\n{'='*95}")
+    print(f"  QUICK METRICS SUMMARY")
+    print(f"{'='*95}")
+    print(f"  {'Variant':<42} {'N':>5} {'Micro F1':>9} {'Macro F1':>9} {'Jaccard':>9} {'Recall':>8} {'AvgLat':>8}")
     print(f"  {'-'*95}")
+    model_slug = args.model.replace(":", "-").replace("/", "-")
     for variant in VARIANTS:
-        # ── Match model-named file in summary ──
-        model_slug = args.model.replace(":", "-").replace("/", "-")
         csv = RESULTS_DIR / f"{variant['name']}__{model_slug}.csv"
         if not csv.exists():
-            print(f"  {variant['name']:<35} (not run)")
+            print(f"  {variant['name']:<42} (not run yet)")
             continue
         m = compute_metrics_from_csv(csv)
         if not m:
-            print(f"  {variant['name']:<35} (no data)")
+            print(f"  {variant['name']:<42} (no data)")
             continue
-        print(f"  {variant['name']:<35} {m['n_evaluated']:>5} "
+        print(f"  {variant['name']:<42} {m['n_evaluated']:>5} "
               f"{m.get('micro_f1',0):>9.4f} {m.get('macro_f1',0):>9.4f} "
               f"{m.get('jaccard_similarity',0):>9.4f} {m.get('recall',0):>8.4f} "
-              f"{m.get('avg_latency_s',0):>8.1f}s {m.get('median_latency_s',0):>8.1f}s")
-
+              f"{m.get('avg_latency_s',0):>7.1f}s")
     print(f"\nAll results in: {RESULTS_DIR}")
+    print(f"File pattern : <variant_name>__{model_slug}.csv  (model-namespaced, safe to run multiple models)")
 
 
 if __name__ == "__main__":

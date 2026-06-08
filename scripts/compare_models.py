@@ -1,8 +1,9 @@
-"""Compare results from multiple models on the same test set."""
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).resolve().parents[1] / "src"))
 
 import ast
 import pandas as pd
-from pathlib import Path
 from metrics import calculate_metrics, per_label_report
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -47,8 +48,8 @@ def evaluate_file(csv_path, model_name):
 
 def main():
     models = {
-        "llama3.3:70b": Path("test_results.csv"),
-        "gemma3:27b": Path("test_results_gemma3_27b.csv"),
+        "llama3.3:70b": Path("results/test_results.csv"),
+        "gemma3:27b": Path("results/test_results_gemma3_27b.csv"),
     }
     
     results = {}
@@ -168,7 +169,7 @@ def main():
     })
 
     # ── Per-label metrics ─────────────────────────────────────────────────────────
-    llama_per = pd.read_csv(r"c:\Users\eggoni\Desktop\llm\per_label_metrics_30pct.csv")
+    llama_per = pd.read_csv("results/per_label_metrics_30pct.csv")
     llama_per["Category"] = llama_per["Category"].str.strip()
 
     cat_per = pd.DataFrame({
@@ -201,7 +202,7 @@ def main():
         ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.01,
                 f"{bar.get_height():.3f}", ha="center", va="bottom", fontsize=8)
     plt.tight_layout()
-    plt.savefig(r"c:\Users\eggoni\Desktop\llm\overall_comparison.png", dpi=150)
+    plt.savefig("plots/overall_comparison.png", dpi=150)
     plt.show()
 
     # ── Plot 2 – Per-label F1 comparison ─────────────────────────────────────────
@@ -217,7 +218,7 @@ def main():
     ax.set_title("Per-Label F1 Score – LLaMA 3.3 70b vs CatBoost")
     ax.legend()
     plt.tight_layout()
-    plt.savefig(r"c:\Users\eggoni\Desktop\llm\perlabel_f1_comparison.png", dpi=150)
+    plt.savefig("plots/perlabel_f1_comparison.png", dpi=150)
     plt.show()
 
     # ── Plot 3 – Per-label Precision & Recall side by side ───────────────────────
@@ -234,7 +235,7 @@ def main():
         ax.legend()
     fig.suptitle("Per-Label Precision & Recall – LLaMA 3.3 70b vs CatBoost", fontsize=13)
     plt.tight_layout()
-    plt.savefig(r"c:\Users\eggoni\Desktop\llm\perlabel_prec_rec_comparison.png", dpi=150)
+    plt.savefig("plots/perlabel_prec_rec_comparison.png", dpi=150)
     plt.show()
 
     # ── Plot 4 – Radar chart (overall metrics, excl. Hamming Loss) ───────────────
@@ -254,10 +255,10 @@ def main():
     ax.set_title("Radar Chart – Overall Metrics", pad=20)
     ax.legend(loc="upper right", bbox_to_anchor=(1.3, 1.1))
     plt.tight_layout()
-    plt.savefig(r"c:\Users\eggoni\Desktop\llm\radar_comparison.png", dpi=150)
+    plt.savefig("plots/radar_comparison.png", dpi=150)
     plt.show()
 
-    print("All plots saved to Desktop/llm/")
+    print("All plots saved to plots/")
 
 
 if __name__ == "__main__":
