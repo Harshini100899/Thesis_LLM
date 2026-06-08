@@ -18,7 +18,7 @@ Key comparison pairs (sculpting ablation):
 
 | No Sculpting | With Sculpting |
 |---|---|
-| v02_seven_cot_desc ← production | v13sc_seven_cot_desc ← sculpted flagship |
+| v02_seven_cot_desc ← production | v13sc_seven_cot_desc ← Ccot flagship |
 | v06_seven_cot_no_desc | v12sc_seven_cot_no_desc |
 | v05_seven_no_cot_desc | v11sc_seven_no_cot_desc |
 | v03_ten_cot_desc | v14sc_ten_cot_desc |
@@ -26,10 +26,7 @@ Key comparison pairs (sculpting ablation):
 ## Run
 
 ```bash
-cd /home/coder/llm
 
-# Check server load first
-python prompt_experiments/run_experiments.py --model llama3.3:70b --check-load
 
 # Run all 16 variants (results saved as <variant>__llama3.3-70b.csv — never overwrites)
 python prompt_experiments/run_experiments.py --model llama3.3:70b
@@ -47,32 +44,11 @@ python prompt_experiments/run_experiments.py --model llama3.1:8b
 python prompt_experiments/analyze_results.py
 ```
 
-## Copy & Run (full workflow)
+
 
 ```bash
-# 1. Copy updated files to server (run on local PC)
-scp -r c:\Users\eggoni\Desktop\llm\prompt_experiments\*.py coder.LLMtune:/home/coder/llm/prompt_experiments/
-scp c:\Users\eggoni\Desktop\llm\prompt_experiments\get_token.sh coder.LLMtune:/home/coder/llm/prompt_experiments/
-
-# 2. SSH into server
-coder ssh LLMtune
-cd /home/coder/llm
-source .venv/bin/activate
-
-# 3. Get bearer token (device flow — opens a browser URL, valid ~1 hour)
-bash prompt_experiments/get_token.sh
-# Open the printed URL, enter the code, then run:
-export OLLAMA_API_KEY=<paste_token_here>
-
-# 4. Run experiments (token picked up from env var)
 python prompt_experiments/run_experiments.py --model llama3.3:70b
 
-# Or pass token explicitly
-python prompt_experiments/run_experiments.py --model llama3.3:70b --api-key $OLLAMA_API_KEY
-
-# 5. Copy results back to local PC
-scp -r coder.LLMtune:/home/coder/llm/prompt_experiments/results/ "C:\Users\eggoni\Desktop\llm\prompt_experiments\results\"
-scp -r coder.LLMtune:/home/coder/llm/prompt_experiments/plots/ "C:\Users\eggoni\Desktop\llm\prompt_experiments\plots\"
 ```
 
 ## Output — Model-Namespaced Files (no accidental overwrites)

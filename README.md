@@ -6,7 +6,7 @@ Classifies JOSS research software repositories into 9 categories using an LLM (O
 
 | Category | Description |
 |----------|-------------|
-| **Modeling And Simulation** | Numerical solvers, agent-based models, ODE/PDE simulators |
+| **Modeling And Simulation** | Numerical solvers, ODE/PDE simulators |
 | **Data Analytics** | Statistical analysis, ML pipelines, data processing |
 | **Software Analytics** | Code analysis, repository mining, software quality tools |
 | **Integrative Analysis** | Multi-source integration, data assimilation, visualization |
